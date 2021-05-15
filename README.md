@@ -34,7 +34,6 @@
 
 - <a href="https://www.themealdb.com/api.php" alt="The meal DB">The meal db</a>
 - <a href="https://spoonacular.com/food-api" alt="spoonacular">Spoonacular</a><br>
-- <a href="https://www.themealdb.com/api.php" alt="The meal DB">The meal db</a>
 
 - - -
 
