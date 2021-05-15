@@ -19,7 +19,7 @@
 
 - - -
 
-##Technology used for this website:
+<h2>Technology used for this website:</h2>
 
 - <a href="https://vuejs.org/" alt="vue.js">Vue.js</a>
 - <a href="https://www.positronx.io/laravel-ajax-example-tutorial/" alt="ajax">Ajax with JavaScript</a>
@@ -30,7 +30,7 @@
 
 - - -
 
-##Used Api's for the data:
+<h2>Api's for the data:</h2>
 
 - <a href="https://www.themealdb.com/api.php" alt="The meal DB">The meal db</a>
 - <a href="https://spoonacular.com/food-api" alt="spoonacular">Spoonacular</a><br>
@@ -38,7 +38,7 @@
 
 - - -
 
-##Developer Team
+<h2>Developer Team</h2>
 
 - Julia
 - Predrag
