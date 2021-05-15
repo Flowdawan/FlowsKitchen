@@ -39,18 +39,6 @@ Route::get('users/{id}', function($id)
     }
 }) -> name('hello.show');
 
-/*
-Route::middleware('auth')->group(function() {
-    Route::get('dashboard', function () {
-        return view('dashboard');
-    });
-    Route::get('account', function () {
-        return view('account');
-    });
-});*/
-
-
-
 Route::fallback(function(){
     return 'Oh no crap - this site doesn\'t exist';
 });
@@ -59,6 +47,3 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
