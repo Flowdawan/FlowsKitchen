@@ -54,3 +54,11 @@ Route::middleware('auth')->group(function() {
 Route::fallback(function(){
     return 'Oh no crap - this site doesn\'t exist';
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
