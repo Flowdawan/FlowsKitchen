@@ -14,12 +14,26 @@ use App\Http\Controllers\TasksController;
 |
 */
 
+Route::view('/', 'content.index');
+
+
+/*
+ * Testing routes
 Route::get('/', [TasksController::class, 'index']);
+
+Route::get('test', function(){
+    return View::make('testview', ['name' => 'john']);
+});
+
+Route::get('/start', function(){
+    return view('start', ['name' => 'tom', 'id' => 5]);
+});
 
 Route::view('shops', 'layout');
 
 Route::resource('tasks', TasksController::class);
 
+Route::view('/help', 'users');
 
 Route::get('about', function() {
     return "It's all about php";
@@ -47,3 +61,4 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+*/
