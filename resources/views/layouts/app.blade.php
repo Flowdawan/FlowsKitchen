@@ -16,10 +16,10 @@
             <a class="nav-link" href="/">Home</a>
         </li>
         <li>
-            <a class="nav-link" href="#">Rezepte</a>
+            <a class="nav-link" href="<?php echo route('recipes.show')?>">Rezepte</a>
         </li>
         <li>
-            <a class="nav-link" href="#">Suche</a>
+            <a class="nav-link" href="<?php echo route('abouts.show')?>">Über uns</a>
         </li>
     </ul>
     <ul class="navbar-nav ms-auto ">
@@ -27,13 +27,13 @@
             <a class="nav-link" href="#">Florian Müllner</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Login</a>
+            <a class="nav-link" href="../auth/login">Anmelden</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Registrieren</a>
+            <a class="nav-link" href="../auth/register">Registrieren</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Logout</a>
+            <a class="nav-link" href="../auth/logout">Abmelden</a>
         </li>
         <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -43,9 +43,9 @@
 </nav>
 @yield('content')
 
-<footer class="bg-light text-center container-fluid fixed-bottom">
+<footer class="bg-light text-center mw-100 container-fluid fixed-bottom">
     <!-- Copyright -->
-    <div class="text-center p-3">
+    <div class="p-3">
         © 2020 Copyright:
         <a class="text-dark" href="/">Flow's kitchen</a>
     </div>

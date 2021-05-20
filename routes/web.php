@@ -17,6 +17,10 @@ use App\Http\Controllers\TasksController;
 
 Route::view('/', 'content.index');
 
+Route::view('recipes', 'content.recipes')->name('recipes.show');
+
+Route::view('about', 'content.about')->name('abouts.show');
+
 
 /*
  * Testing routes
