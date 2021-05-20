@@ -14,6 +14,7 @@ use App\Http\Controllers\TasksController;
 |
 */
 
+
 Route::view('/', 'content.index');
 
 
