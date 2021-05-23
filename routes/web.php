@@ -24,6 +24,15 @@ Route::view('about', 'content.about')->name('abouts.show');
 
 Route::view('login', 'auth.login')->name('logins.show');
 
+Route::view('register', 'auth.register')->name('registers.show');
+
+Route::view('logout', 'auth.logout')->name('logouts.show');
+
+
+#If the user goes to a site wich doesnt exist we can define a fallback route
+Route::fallback(function(){
+    return 'Oh no crap - this site doesn\'t exist';
+});
 
 /*
  * Testing routes

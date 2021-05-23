@@ -28,13 +28,13 @@
             <a class="nav-link" href="#">Florian Müllner</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="<?php echo route('logins.show')?>">Anmelden</a>
+            <a class="nav-link" href="{{route('logins.show')}}">Anmelden</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="../auth/register">Registrieren</a>
+            <a class="nav-link" href="{{route('registers.show')}}">Registrieren</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="../auth/logout">Abmelden</a>
+            <a class="nav-link" href="{{route('logouts.show')}}">Abmelden</a>
         </li>
         <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
