@@ -11,3 +11,8 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 }
+
+
+
+
+Route::view('recipes', 'controller.recipes')->name('recipes.show');

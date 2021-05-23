@@ -21,6 +21,8 @@ Route::view('recipes', 'content.recipes')->name('recipes.show');
 
 Route::view('about', 'content.about')->name('abouts.show');
 
+Route::view('login', 'auth.login')->name('logins.show');
+
 
 /*
  * Testing routes

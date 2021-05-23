@@ -6,10 +6,11 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
+    <script type="text/javascript" src="{{ asset('js/customtest.js') }}"></script>
     <title>Flow's Kitchen</title>
 </head>
 <body class="bg-dark">
-<nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-end mb-2">
+<nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-end mb-2 mw-100">
     <a class="navbar-brand" href="#">Flow's Kitchen</a>
     <ul class="navbar-nav mr-auto">
         <li>
@@ -27,7 +28,7 @@
             <a class="nav-link" href="#">Florian Müllner</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="../auth/login">Anmelden</a>
+            <a class="nav-link" href="<?php echo route('logins.show')?>">Anmelden</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="../auth/register">Registrieren</a>
