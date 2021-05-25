@@ -5,7 +5,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">{{ __('Login') }}</div>
+                    <div class="card-header">{{ __('Sign in') }}</div>
                     @if(session('status'))
                         <div class="bg-danger p-3 rounded-lg mb-4 text-white text-center">
                             {{session('status')}}
@@ -52,7 +52,7 @@
                             <div class="form-group row mb-0">
                                 <div class="col-md-8 offset-md-4">
                                     <button type="submit" class="btn btn-primary">
-                                        {{ __('Login') }}
+                                        {{ __('Sign in') }}
                                     </button>
                                 </div>
                             </div>
