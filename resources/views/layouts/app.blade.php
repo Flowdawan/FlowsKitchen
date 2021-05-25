@@ -6,36 +6,47 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
-    <script type="text/javascript" src="{{ asset('js/customtest.js') }}"></script>
     <title>Flow's Kitchen</title>
 </head>
 <body class="bg-dark">
 <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-end mb-2 mw-100">
-    <a class="navbar-brand" href="#">Flow's Kitchen</a>
+    <a class="navbar-brand" href="{{route('index.show')}}">Flow's Kitchen</a>
     <ul class="navbar-nav mr-auto">
         <li>
-            <a class="nav-link" href="/">Home</a>
+            <a class="nav-link" href="{{route('index.show')}}">Home</a>
         </li>
         <li>
-            <a class="nav-link" href="<?php echo route('recipes.show')?>">Rezepte</a>
+            <a class="nav-link" href="<?php echo route('recipes.show')?>">Recipes</a>
         </li>
         <li>
-            <a class="nav-link" href="<?php echo route('abouts.show')?>">Über uns</a>
+            <a class="nav-link" href="<?php echo route('abouts.show')?>">About us</a>
         </li>
     </ul>
     <ul class="navbar-nav ms-auto ">
-        <li class="nav-item">
-            <a class="nav-link" href="#">Florian Müllner</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="{{route('logins.show')}}">Anmelden</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="{{route('registers.show')}}">Registrieren</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="{{route('logouts.show')}}">Abmelden</a>
-        </li>
+        <!-- if (auth->users) or with auth and guest directive from blade and laravel-->
+
+        @auth
+            <li class="nav-item">
+                <a class="nav-link" href="{{route('index.show')}}">Florian Müllner</a>
+            </li>
+            <li class="nav-item">
+                <!-- Because of xss protection we use here a form for the logout, if not someone could logout somebody else-->
+                <form action="{{route('logouts.show')}}" method="post">
+                    @csrf
+                    <button class="nav-link btn" type="submit">Logout</button>
+                </form>
+            </li>
+        @endauth
+
+        @guest
+            <li class="nav-item">
+                <a class="nav-link" href="{{route('logins.show')}}">Login</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{route('registers.show')}}">Register</a>
+            </li>
+        @endguest
+
         <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>

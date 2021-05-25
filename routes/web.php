@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\LogoutController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\TasksController;
+use App\Http\Controllers\Auth\RegisterController;
 
 /*
  *  :)
@@ -16,21 +18,28 @@ use App\Http\Controllers\TasksController;
 */
 
 
-Route::view('/', 'content.index');
+Route::view('/', 'content.index')->name('index.show');
 
 Route::view('recipes', 'content.recipes')->name('recipes.show');
 
 Route::view('about', 'content.about')->name('abouts.show');
 
-Route::view('login', 'auth.login')->name('logins.show');
 
-Route::view('register', 'auth.register')->name('registers.show');
+//calls the register controller, one for the normal call and one for the post request after the submit button is clicked
+// 'index' and 'store' are the methods to be called in the controller
+Route::get('register', [RegisterController::class, 'index'])->name('registers.show');
+Route::post('register', [RegisterController::class, 'store']);
 
-Route::view('logout', 'auth.logout')->name('logouts.show');
+Route::get('login', [LoginController::class, 'index'])->name('logins.show');
+Route::post('login', [LoginController::class, 'loginUser']);
+
+Route::post('logout', [LogoutController::class, 'logoutUser'])->name('logouts.show');
 
 
-#If the user goes to a site wich doesnt exist we can define a fallback route
-Route::fallback(function(){
+
+
+//If the user goes to a site wich doesnt exist we can define a fallback route
+Route::fallback(function () {
     return 'Oh no crap - this site doesn\'t exist';
 });
 
