@@ -21,7 +21,7 @@
 
 <h2>Technology used for this website:</h2>
 
-- <a href="https://www.positronx.io/laravel-ajax-example-tutorial/" alt="ajax">Ajax with JavaScript</a>
+- <a href="https://www.positronx.io/laravel-ajax-example-tutorial/" alt="ajax">JavaScript Wirth Ajax</a>
 - <a href="https://getbootstrap.com/" alt="bootstrap">Bootstrap</a>
 - <a href="https://www.mysql.com/de/" alt="mysql">MySql</a>
 - <a href="https://laravel.com/" alt="Laravel">Php with Laravel</a> 
