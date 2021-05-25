@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <script type="text/javascript" src="{{ asset('js/customtest.js') }}"></script>
     <title>Flow's Kitchen</title>
+    <link rel="shortcut icon" type="image/png" href="{{url('/images/logov.png')}}"/>
 </head>
 <body class="bg-dark">
 <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-end mb-2 mw-100">
