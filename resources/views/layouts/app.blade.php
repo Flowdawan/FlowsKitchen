@@ -11,7 +11,9 @@
 </head>
 <body class="bg-dark">
 <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-end mb-2 mw-100">
-    <a class="navbar-brand" href="#">Flow's Kitchen</a>
+    <a class="navbar-brand" href="#">Flow's Kitchen
+        <img src="{{url('/images/logov.png')}}" width="30" height="30" class="d-inline-block align-top" alt="">
+    </a>
     <ul class="navbar-nav mr-auto">
         <li>
             <a class="nav-link" href="/">Home</a>
@@ -25,7 +27,9 @@
     </ul>
     <ul class="navbar-nav ms-auto ">
         <li class="nav-item">
-            <a class="nav-link" href="#">Florian Müllner</a>
+            <a class="nav-link" href="#">Florian Müllner
+
+            </a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="{{route('logins.show')}}">Sign in</a>
