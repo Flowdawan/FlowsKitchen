@@ -27,7 +27,7 @@
 
         @auth
             <li class="nav-item">
-                <a class="nav-link" href="{{route('index.show')}}">Florian Müllner</a>
+                <a class="nav-link" href="{{route('index.show')}}">{{auth()->user()->name}}</a>
             </li>
             <li class="nav-item">
                 <!-- Because of xss protection we use here a form for the logout, if not someone could logout somebody else-->
