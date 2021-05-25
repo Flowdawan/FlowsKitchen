@@ -6,18 +6,17 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
-    <script type="text/javascript" src="{{ asset('js/customtest.js') }}"></script>
     <title>Flow's Kitchen</title>
     <link rel="shortcut icon" type="image/png" href="{{url('/images/logov.png')}}"/>
 </head>
 <body class="bg-dark">
 <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-end mb-2 mw-100">
-    <a class="navbar-brand" href="#">Flow's Kitchen
+    <a class="navbar-brand" href="{{route('index.show')}}">Flow's Kitchen
         <img src="{{url('/images/logov.png')}}" width="30" height="30" class="d-inline-block align-top" alt="">
     </a>
     <ul class="navbar-nav mr-auto">
         <li>
-            <a class="nav-link" href="/">Home</a>
+            <a class="nav-link" href="{{route('index.show')}}">Home</a>
         </li>
         <li>
             <a class="nav-link" href="<?php echo route('recipes.show')?>">Recipes</a>
@@ -27,20 +26,30 @@
         </li>
     </ul>
     <ul class="navbar-nav ms-auto ">
-        <li class="nav-item">
-            <a class="nav-link" href="#">Florian Müllner
+        <!-- if (auth->users) or with auth and guest directive from blade and laravel-->
 
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="{{route('logins.show')}}">Sign in</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="{{route('registers.show')}}">Sign up</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="{{route('logouts.show')}}">Sign out</a>
-        </li>
+        @auth
+            <li class="nav-item">
+                <a class="nav-link" href="{{route('index.show')}}">{{auth()->user()->name}}</a>
+            </li>
+            <li class="nav-item">
+                <!-- Because of xss protection we use here a form for the logout, if not someone could logout somebody else-->
+                <form action="{{route('logouts.show')}}" method="post">
+                    @csrf
+                    <button class="nav-link btn" type="submit">Sign out</button>
+                </form>
+            </li>
+        @endauth
+
+        @guest
+            <li class="nav-item">
+                <a class="nav-link" href="{{route('logins.show')}}">Sign in</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{route('registers.show')}}">Sign up</a>
+            </li>
+        @endguest
+
         <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
