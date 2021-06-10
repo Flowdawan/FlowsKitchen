@@ -14,47 +14,46 @@
     <a class="navbar-brand" href="{{route('index.show')}}">Flow's Kitchen
         <img src="{{url('/images/logov.png')}}" width="30" height="30" class="d-inline-block align-top" alt="">
     </a>
-    <ul class="navbar-nav mr-auto">
-        <li>
-            <a class="nav-link" href="{{route('index.show')}}">Home</a>
-        </li>
-        <li>
-            <a class="nav-link" href="<?php echo route('recipes.show')?>">Recipes</a>
-        </li>
-        <li>
-            <a class="nav-link" href="<?php echo route('abouts.show')?>">About</a>
-        </li>
-    </ul>
-    <ul class="navbar-nav ms-auto ">
-        <!-- if (auth->users) or with auth and guest directive from blade and laravel-->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+        <div class="collapse navbar-collapse align-content-center" id="navbarNavDropdown">
+            <ul class="navbar-nav mr-auto">
+                <li>
+                    <a class="nav-link" href="{{route('index.show')}}">Home</a>
+                </li>
+                <li>
+                    <a class="nav-link" href="<?php echo route('recipes.show')?>">Recipes</a>
+                </li>
+                <li>
+                    <a class="nav-link" href="<?php echo route('abouts.show')?>">About</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ms-auto ">
+                <!-- if (auth->users) or with auth and guest directive from blade and laravel-->
+                @auth
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('index.show')}}">{{auth()->user()->name}}</a>
+                    </li>
+                    <li class="nav-item">
+                        <!-- Because of xss protection we use here a form for the logout, if not someone could logout somebody else-->
+                        <form action="{{route('logouts.show')}}" method="post">
+                            @csrf
+                            <button class="nav-link btn" type="submit">Sign out</button>
+                        </form>
+                    </li>
+                @endauth
 
-        @auth
-            <li class="nav-item">
-                <a class="nav-link" href="{{route('index.show')}}">{{auth()->user()->name}}</a>
-            </li>
-            <li class="nav-item">
-                <!-- Because of xss protection we use here a form for the logout, if not someone could logout somebody else-->
-                <form action="{{route('logouts.show')}}" method="post">
-                    @csrf
-                    <button class="nav-link btn" type="submit">Sign out</button>
-                </form>
-            </li>
-        @endauth
-
-        @guest
-            <li class="nav-item">
-                <a class="nav-link" href="{{route('logins.show')}}">Sign in</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{route('registers.show')}}">Sign up</a>
-            </li>
-        @endguest
-
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
-    </ul>
+                @guest
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('logins.show')}}">Sign in</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('registers.show')}}">Sign up</a>
+                    </li>
+                @endguest
+            </ul>
+        </div>
 </nav>
 @yield('content')
 
@@ -64,7 +63,10 @@
         © 2020 Copyright:
         <a class="text-dark" href="/">Flow's kitchen</a>
     </div>
-    <!-- Copyright -->
 </footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
+
 </body>
 </html>
