@@ -11,6 +11,7 @@
 </head>
 <body class="bg-dark">
 <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-end mb-2 mw-100">
+    <!--- hi !--->
     <a class="navbar-brand" href="{{route('index.show')}}">Flow's Kitchen
         <img src="{{url('/images/logov.png')}}" width="30" height="30" class="d-inline-block align-top" alt="">
     </a>
