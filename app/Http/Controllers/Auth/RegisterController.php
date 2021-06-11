@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use http\Env;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -26,7 +27,6 @@ class RegisterController extends Controller
         ]);
 
         //store the User in the database
-
         User::create([
             'name' => $request->name,
             'email' => $request->email,

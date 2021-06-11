@@ -6,6 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
+    @yield('header_scripts')
     <title>Flow's Kitchen - @yield('title', 'Homepage')</title>
     <link rel="shortcut icon" type="image/png" href="{{url('/images/logov.png')}}"/>
 </head>
@@ -27,6 +28,9 @@
                 </li>
                 <li>
                     <a class="nav-link" href="<?php echo route('abouts.show')?>">About</a>
+                </li>
+                <li>
+                    <a class="nav-link" href="<?php echo route('maps.show')?>">Map</a>
                 </li>
             </ul>
             <ul class="navbar-nav ms-auto ">

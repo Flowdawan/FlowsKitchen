@@ -26,6 +26,7 @@ Route::view('recipes', 'content.recipes')->name('recipes.show');
 
 Route::view('about', 'content.about')->name('abouts.show');
 
+Route::view('map', 'content.map')->name('maps.show');
 
 
 //calls the register controller, one for the normal call and one for the post request after the submit button is clicked
