@@ -6,12 +6,11 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
-    <title>Flow's Kitchen</title>
+    <title>Flow's Kitchen - @yield('title', 'Homepage')</title>
     <link rel="shortcut icon" type="image/png" href="{{url('/images/logov.png')}}"/>
 </head>
 <body class="bg-dark">
 <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-end mb-2 mw-100">
-    <!--- hi !--->
     <a class="navbar-brand" href="{{route('index.show')}}">Flow's Kitchen
         <img src="{{url('/images/logov.png')}}" width="30" height="30" class="d-inline-block align-top" alt="">
     </a>
@@ -34,7 +33,7 @@
                 <!-- if (auth->users) or with auth and guest directive from blade and laravel-->
                 @auth
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('index.show')}}">{{auth()->user()->name}}</a>
+                        <a class="nav-link" href="{{route('profiles.show')}}">{{auth()->user()->name}}</a>
                     </li>
                     <li class="nav-item">
                         <!-- Because of xss protection we use here a form for the logout, if not someone could logout somebody else-->

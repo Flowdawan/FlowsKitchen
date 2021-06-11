@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('title', 'Home')
 @section('content')
     <form autocomplete="off" action="index.php">
         <div class="justify-content-lg-center row row-cols-sm-2">

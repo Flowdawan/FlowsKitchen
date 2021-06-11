@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
+use App\Http\Controllers\User\UserPageController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\RegisterController;
 
@@ -37,10 +38,11 @@ Route::post('login', [LoginController::class, 'loginUser']);
 
 Route::post('logout', [LogoutController::class, 'logoutUser'])->name('logouts.show');
 
+//routes for the profilepage
+Route::get('profile', [UserPageController::class, 'show'])->name('profiles.show');
 
 
-
-//If the user goes to a site wich doesnt exist we can define a fallback route
+//If the User goes to a site wich doesnt exist we can define a fallback route
 Route::fallback(function () {
     return 'Oh no crap - this site doesn\'t exist';
 });

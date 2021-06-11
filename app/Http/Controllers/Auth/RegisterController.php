@@ -21,11 +21,11 @@ class RegisterController extends Controller
         //and the validate method comes with laravel and defined rules which we can just use
         $this->validate($request, [
             'name' => 'required|max:255',
-            'email' => 'required|email|max:255',
+            'email' => 'required|email|unique:users,email|max:255',
             'password' => 'required|confirmed'
         ]);
 
-        //store the user in the database
+        //store the User in the database
 
         User::create([
             'name' => $request->name,
@@ -34,11 +34,11 @@ class RegisterController extends Controller
         ]);
 
 
-        //sign the user in
-        //we use here a 'auth helper' where we get the user object with he is logged in or null if not
+        //sign the User in
+        //we use here a 'auth helper' where we get the User object with he is logged in or null if not
         auth()->attempt($request->only('email', 'password'));
 
-        //redirect the user
+        //redirect the User
         return redirect()->route('index.show');
     }
 }

@@ -2818,7 +2818,7 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
         if (_this3._config.pause === 'hover') {
           // If it's a touch-enabled device, mouseenter/leave are fired as
           // part of the mouse compatibility events on first tap - the carousel
-          // would stop cycling until user tapped out of it;
+          // would stop cycling until User tapped out of it;
           // here, we listen for touchend, explicitly pause the carousel
           // (as if it's the second time we tap on it, mouseenter compat event
           // is NOT fired) and after a timeout (to allow for mouse compatibility
@@ -8155,7 +8155,7 @@ getText = Sizzle.getText = function( elem ) {
 
 Expr = Sizzle.selectors = {
 
-	// Can be adjusted by the user
+	// Can be adjusted by the User
 	cacheLength: 50,
 
 	createPseudo: markFunction,
@@ -8456,7 +8456,7 @@ Expr = Sizzle.selectors = {
 				fn = Expr.pseudos[ pseudo ] || Expr.setFilters[ pseudo.toLowerCase() ] ||
 					Sizzle.error( "unsupported pseudo: " + pseudo );
 
-			// The user may use createPseudo to indicate that
+			// The User may use createPseudo to indicate that
 			// arguments are needed to create the filter function
 			// just as Sizzle does
 			if ( fn[ expando ] ) {
@@ -10793,9 +10793,9 @@ var dataUser = new Data();
 //	1. Enforce API surface and semantic compatibility with 1.9.x branch
 //	2. Improve the module's maintainability by reducing the storage
 //		paths to a single mechanism.
-//	3. Use the same single mechanism to support "private" and "user" data.
-//	4. _Never_ expose "private" data to user code (TODO: Drop _data, _removeData)
-//	5. Avoid exposing implementation details on user objects (eg. expando properties)
+//	3. Use the same single mechanism to support "private" and "User" data.
+//	4. _Never_ expose "private" data to User code (TODO: Drop _data, _removeData)
+//	5. Avoid exposing implementation details on User objects (eg. expando properties)
 //	6. Provide a clear path for implementation upgrade to WeakMap in 2014
 
 var rbrace = /^(?:\{[\w\W]*\}|\[[\w\W]*\])$/,
@@ -12406,7 +12406,7 @@ function cloneCopyEvent( src, dest ) {
 		}
 	}
 
-	// 2. Copy user data
+	// 2. Copy User data
 	if ( dataUser.hasData( src ) ) {
 		udataOld = dataUser.access( src );
 		udataCur = jQuery.extend( {}, udataOld );
@@ -13308,7 +13308,7 @@ jQuery.extend( {
 
 		// Make sure that we're working with the right name. We don't
 		// want to query the value if it is a CSS custom property
-		// since they are user-defined.
+		// since they are User-defined.
 		if ( !isCustomProp ) {
 			name = finalPropName( origName );
 		}
@@ -13377,7 +13377,7 @@ jQuery.extend( {
 
 		// Make sure that we're working with the right name. We don't
 		// want to modify the value if it is a CSS custom property
-		// since they are user-defined.
+		// since they are User-defined.
 		if ( !isCustomProp ) {
 			name = finalPropName( origName );
 		}
@@ -16266,7 +16266,7 @@ jQuery._evalUrl = function( url, options, doc ) {
 	return jQuery.ajax( {
 		url: url,
 
-		// Make this explicit, since user can override this through ajaxSetup (#11264)
+		// Make this explicit, since User can override this through ajaxSetup (#11264)
 		type: "GET",
 		dataType: "script",
 		cache: true,
@@ -16785,7 +16785,7 @@ jQuery.fn.load = function( url, params, callback ) {
 
 			// If "type" variable is undefined, then "GET" method will be used.
 			// Make value of this field explicit since
-			// user can override it through ajaxSetup method
+			// User can override it through ajaxSetup method
 			type: type || "GET",
 			dataType: "html",
 			data: params
@@ -24459,16 +24459,16 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
      * @example
      *
      * var users = [
-     *   { 'user': 'barney',  'active': true },
-     *   { 'user': 'fred',    'active': false },
-     *   { 'user': 'pebbles', 'active': false }
+     *   { 'User': 'barney',  'active': true },
+     *   { 'User': 'fred',    'active': false },
+     *   { 'User': 'pebbles', 'active': false }
      * ];
      *
      * _.dropRightWhile(users, function(o) { return !o.active; });
      * // => objects for ['barney']
      *
      * // The `_.matches` iteratee shorthand.
-     * _.dropRightWhile(users, { 'user': 'pebbles', 'active': false });
+     * _.dropRightWhile(users, { 'User': 'pebbles', 'active': false });
      * // => objects for ['barney', 'fred']
      *
      * // The `_.matchesProperty` iteratee shorthand.
@@ -24500,16 +24500,16 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
      * @example
      *
      * var users = [
-     *   { 'user': 'barney',  'active': false },
-     *   { 'user': 'fred',    'active': false },
-     *   { 'user': 'pebbles', 'active': true }
+     *   { 'User': 'barney',  'active': false },
+     *   { 'User': 'fred',    'active': false },
+     *   { 'User': 'pebbles', 'active': true }
      * ];
      *
      * _.dropWhile(users, function(o) { return !o.active; });
      * // => objects for ['pebbles']
      *
      * // The `_.matches` iteratee shorthand.
-     * _.dropWhile(users, { 'user': 'barney', 'active': false });
+     * _.dropWhile(users, { 'User': 'barney', 'active': false });
      * // => objects for ['fred', 'pebbles']
      *
      * // The `_.matchesProperty` iteratee shorthand.
@@ -24582,16 +24582,16 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
      * @example
      *
      * var users = [
-     *   { 'user': 'barney',  'active': false },
-     *   { 'user': 'fred',    'active': false },
-     *   { 'user': 'pebbles', 'active': true }
+     *   { 'User': 'barney',  'active': false },
+     *   { 'User': 'fred',    'active': false },
+     *   { 'User': 'pebbles', 'active': true }
      * ];
      *
-     * _.findIndex(users, function(o) { return o.user == 'barney'; });
+     * _.findIndex(users, function(o) { return o.User == 'barney'; });
      * // => 0
      *
      * // The `_.matches` iteratee shorthand.
-     * _.findIndex(users, { 'user': 'fred', 'active': false });
+     * _.findIndex(users, { 'User': 'fred', 'active': false });
      * // => 1
      *
      * // The `_.matchesProperty` iteratee shorthand.
@@ -24629,16 +24629,16 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
      * @example
      *
      * var users = [
-     *   { 'user': 'barney',  'active': true },
-     *   { 'user': 'fred',    'active': false },
-     *   { 'user': 'pebbles', 'active': false }
+     *   { 'User': 'barney',  'active': true },
+     *   { 'User': 'fred',    'active': false },
+     *   { 'User': 'pebbles', 'active': false }
      * ];
      *
-     * _.findLastIndex(users, function(o) { return o.user == 'pebbles'; });
+     * _.findLastIndex(users, function(o) { return o.User == 'pebbles'; });
      * // => 2
      *
      * // The `_.matches` iteratee shorthand.
-     * _.findLastIndex(users, { 'user': 'barney', 'active': true });
+     * _.findLastIndex(users, { 'User': 'barney', 'active': true });
      * // => 0
      *
      * // The `_.matchesProperty` iteratee shorthand.
@@ -25580,16 +25580,16 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
      * @example
      *
      * var users = [
-     *   { 'user': 'barney',  'active': true },
-     *   { 'user': 'fred',    'active': false },
-     *   { 'user': 'pebbles', 'active': false }
+     *   { 'User': 'barney',  'active': true },
+     *   { 'User': 'fred',    'active': false },
+     *   { 'User': 'pebbles', 'active': false }
      * ];
      *
      * _.takeRightWhile(users, function(o) { return !o.active; });
      * // => objects for ['fred', 'pebbles']
      *
      * // The `_.matches` iteratee shorthand.
-     * _.takeRightWhile(users, { 'user': 'pebbles', 'active': false });
+     * _.takeRightWhile(users, { 'User': 'pebbles', 'active': false });
      * // => objects for ['pebbles']
      *
      * // The `_.matchesProperty` iteratee shorthand.
@@ -25621,16 +25621,16 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
      * @example
      *
      * var users = [
-     *   { 'user': 'barney',  'active': false },
-     *   { 'user': 'fred',    'active': false },
-     *   { 'user': 'pebbles', 'active': true }
+     *   { 'User': 'barney',  'active': false },
+     *   { 'User': 'fred',    'active': false },
+     *   { 'User': 'pebbles', 'active': true }
      * ];
      *
      * _.takeWhile(users, function(o) { return !o.active; });
      * // => objects for ['barney', 'fred']
      *
      * // The `_.matches` iteratee shorthand.
-     * _.takeWhile(users, { 'user': 'barney', 'active': false });
+     * _.takeWhile(users, { 'User': 'barney', 'active': false });
      * // => objects for ['barney']
      *
      * // The `_.matchesProperty` iteratee shorthand.
@@ -26075,16 +26075,16 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
      * @example
      *
      * var users = [
-     *   { 'user': 'barney',  'age': 36 },
-     *   { 'user': 'fred',    'age': 40 },
-     *   { 'user': 'pebbles', 'age': 1 }
+     *   { 'User': 'barney',  'age': 36 },
+     *   { 'User': 'fred',    'age': 40 },
+     *   { 'User': 'pebbles', 'age': 1 }
      * ];
      *
      * var youngest = _
      *   .chain(users)
      *   .sortBy('age')
      *   .map(function(o) {
-     *     return o.user + ' is ' + o.age;
+     *     return o.User + ' is ' + o.age;
      *   })
      *   .head()
      *   .value();
@@ -26202,21 +26202,21 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
      * @example
      *
      * var users = [
-     *   { 'user': 'barney', 'age': 36 },
-     *   { 'user': 'fred',   'age': 40 }
+     *   { 'User': 'barney', 'age': 36 },
+     *   { 'User': 'fred',   'age': 40 }
      * ];
      *
      * // A sequence without explicit chaining.
      * _(users).head();
-     * // => { 'user': 'barney', 'age': 36 }
+     * // => { 'User': 'barney', 'age': 36 }
      *
      * // A sequence with explicit chaining.
      * _(users)
      *   .chain()
      *   .head()
-     *   .pick('user')
+     *   .pick('User')
      *   .value();
-     * // => { 'user': 'barney' }
+     * // => { 'User': 'barney' }
      */
     function wrapperChain() {
       return chain(this);
@@ -26463,12 +26463,12 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
      * // => false
      *
      * var users = [
-     *   { 'user': 'barney', 'age': 36, 'active': false },
-     *   { 'user': 'fred',   'age': 40, 'active': false }
+     *   { 'User': 'barney', 'age': 36, 'active': false },
+     *   { 'User': 'fred',   'age': 40, 'active': false }
      * ];
      *
      * // The `_.matches` iteratee shorthand.
-     * _.every(users, { 'user': 'barney', 'active': false });
+     * _.every(users, { 'User': 'barney', 'active': false });
      * // => false
      *
      * // The `_.matchesProperty` iteratee shorthand.
@@ -26505,8 +26505,8 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
      * @example
      *
      * var users = [
-     *   { 'user': 'barney', 'age': 36, 'active': true },
-     *   { 'user': 'fred',   'age': 40, 'active': false }
+     *   { 'User': 'barney', 'age': 36, 'active': true },
+     *   { 'User': 'fred',   'age': 40, 'active': false }
      * ];
      *
      * _.filter(users, function(o) { return !o.active; });
@@ -26549,9 +26549,9 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
      * @example
      *
      * var users = [
-     *   { 'user': 'barney',  'age': 36, 'active': true },
-     *   { 'user': 'fred',    'age': 40, 'active': false },
-     *   { 'user': 'pebbles', 'age': 1,  'active': true }
+     *   { 'User': 'barney',  'age': 36, 'active': true },
+     *   { 'User': 'fred',    'age': 40, 'active': false },
+     *   { 'User': 'pebbles', 'age': 1,  'active': true }
      * ];
      *
      * _.find(users, function(o) { return o.age < 40; });
@@ -26901,12 +26901,12 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
      * // => [16, 64] (iteration order is not guaranteed)
      *
      * var users = [
-     *   { 'user': 'barney' },
-     *   { 'user': 'fred' }
+     *   { 'User': 'barney' },
+     *   { 'User': 'fred' }
      * ];
      *
      * // The `_.property` iteratee shorthand.
-     * _.map(users, 'user');
+     * _.map(users, 'User');
      * // => ['barney', 'fred']
      */
     function map(collection, iteratee) {
@@ -26933,14 +26933,14 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
      * @example
      *
      * var users = [
-     *   { 'user': 'fred',   'age': 48 },
-     *   { 'user': 'barney', 'age': 34 },
-     *   { 'user': 'fred',   'age': 40 },
-     *   { 'user': 'barney', 'age': 36 }
+     *   { 'User': 'fred',   'age': 48 },
+     *   { 'User': 'barney', 'age': 34 },
+     *   { 'User': 'fred',   'age': 40 },
+     *   { 'User': 'barney', 'age': 36 }
      * ];
      *
-     * // Sort by `user` in ascending order and by `age` in descending order.
-     * _.orderBy(users, ['user', 'age'], ['asc', 'desc']);
+     * // Sort by `User` in ascending order and by `age` in descending order.
+     * _.orderBy(users, ['User', 'age'], ['asc', 'desc']);
      * // => objects for [['barney', 36], ['barney', 34], ['fred', 48], ['fred', 40]]
      */
     function orderBy(collection, iteratees, orders, guard) {
@@ -26973,9 +26973,9 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
      * @example
      *
      * var users = [
-     *   { 'user': 'barney',  'age': 36, 'active': false },
-     *   { 'user': 'fred',    'age': 40, 'active': true },
-     *   { 'user': 'pebbles', 'age': 1,  'active': false }
+     *   { 'User': 'barney',  'age': 36, 'active': false },
+     *   { 'User': 'fred',    'age': 40, 'active': true },
+     *   { 'User': 'pebbles', 'age': 1,  'active': false }
      * ];
      *
      * _.partition(users, function(o) { return o.active; });
@@ -27085,8 +27085,8 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
      * @example
      *
      * var users = [
-     *   { 'user': 'barney', 'age': 36, 'active': false },
-     *   { 'user': 'fred',   'age': 40, 'active': true }
+     *   { 'User': 'barney', 'age': 36, 'active': false },
+     *   { 'User': 'fred',   'age': 40, 'active': true }
      * ];
      *
      * _.reject(users, function(o) { return !o.active; });
@@ -27233,12 +27233,12 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
      * // => true
      *
      * var users = [
-     *   { 'user': 'barney', 'active': true },
-     *   { 'user': 'fred',   'active': false }
+     *   { 'User': 'barney', 'active': true },
+     *   { 'User': 'fred',   'active': false }
      * ];
      *
      * // The `_.matches` iteratee shorthand.
-     * _.some(users, { 'user': 'barney', 'active': false });
+     * _.some(users, { 'User': 'barney', 'active': false });
      * // => false
      *
      * // The `_.matchesProperty` iteratee shorthand.
@@ -27274,16 +27274,16 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
      * @example
      *
      * var users = [
-     *   { 'user': 'fred',   'age': 48 },
-     *   { 'user': 'barney', 'age': 36 },
-     *   { 'user': 'fred',   'age': 30 },
-     *   { 'user': 'barney', 'age': 34 }
+     *   { 'User': 'fred',   'age': 48 },
+     *   { 'User': 'barney', 'age': 36 },
+     *   { 'User': 'fred',   'age': 30 },
+     *   { 'User': 'barney', 'age': 34 }
      * ];
      *
-     * _.sortBy(users, [function(o) { return o.user; }]);
+     * _.sortBy(users, [function(o) { return o.User; }]);
      * // => objects for [['barney', 36], ['barney', 34], ['fred', 48], ['fred', 30]]
      *
-     * _.sortBy(users, ['user', 'age']);
+     * _.sortBy(users, ['User', 'age']);
      * // => objects for [['barney', 34], ['barney', 36], ['fred', 30], ['fred', 48]]
      */
     var sortBy = baseRest(function(collection, iteratees) {
@@ -27437,10 +27437,10 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
      * @example
      *
      * function greet(greeting, punctuation) {
-     *   return greeting + ' ' + this.user + punctuation;
+     *   return greeting + ' ' + this.User + punctuation;
      * }
      *
-     * var object = { 'user': 'fred' };
+     * var object = { 'User': 'fred' };
      *
      * var bound = _.bind(greet, object, 'hi');
      * bound('!');
@@ -27483,9 +27483,9 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
      * @example
      *
      * var object = {
-     *   'user': 'fred',
+     *   'User': 'fred',
      *   'greet': function(greeting, punctuation) {
-     *     return greeting + ' ' + this.user + punctuation;
+     *     return greeting + ' ' + this.User + punctuation;
      *   }
      * };
      *
@@ -27494,7 +27494,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
      * // => 'hi fred!'
      *
      * object.greet = function(greeting, punctuation) {
-     *   return greeting + 'ya ' + this.user + punctuation;
+     *   return greeting + 'ya ' + this.User + punctuation;
      * };
      *
      * bound('!');
@@ -30742,8 +30742,8 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
      * @example
      *
      * var users = {
-     *   'fred':    { 'user': 'fred',    'age': 40 },
-     *   'pebbles': { 'user': 'pebbles', 'age': 1 }
+     *   'fred':    { 'User': 'fred',    'age': 40 },
+     *   'pebbles': { 'User': 'pebbles', 'age': 1 }
      * };
      *
      * _.mapValues(users, function(o) { return o.age; });
@@ -32063,8 +32063,8 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
      * @example
      *
      * // Use the "interpolate" delimiter to create a compiled template.
-     * var compiled = _.template('hello <%= user %>!');
-     * compiled({ 'user': 'fred' });
+     * var compiled = _.template('hello <%= User %>!');
+     * compiled({ 'User': 'fred' });
      * // => 'hello fred!'
      *
      * // Use the HTML "escape" delimiter to escape data property values.
@@ -32073,19 +32073,19 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
      * // => '<b>&lt;script&gt;</b>'
      *
      * // Use the "evaluate" delimiter to execute JavaScript and generate HTML.
-     * var compiled = _.template('<% _.forEach(users, function(user) { %><li><%- user %></li><% }); %>');
+     * var compiled = _.template('<% _.forEach(users, function(User) { %><li><%- User %></li><% }); %>');
      * compiled({ 'users': ['fred', 'barney'] });
      * // => '<li>fred</li><li>barney</li>'
      *
      * // Use the internal `print` function in "evaluate" delimiters.
-     * var compiled = _.template('<% print("hello " + user); %>!');
-     * compiled({ 'user': 'barney' });
+     * var compiled = _.template('<% print("hello " + User); %>!');
+     * compiled({ 'User': 'barney' });
      * // => 'hello barney!'
      *
      * // Use the ES template literal delimiter as an "interpolate" delimiter.
      * // Disable support by replacing the "interpolate" delimiter.
-     * var compiled = _.template('hello ${ user }!');
-     * compiled({ 'user': 'pebbles' });
+     * var compiled = _.template('hello ${ User }!');
+     * compiled({ 'User': 'pebbles' });
      * // => 'hello pebbles!'
      *
      * // Use backslashes to treat delimiters as plain text.
@@ -32094,29 +32094,29 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
      * // => '<%- value %>'
      *
      * // Use the `imports` option to import `jQuery` as `jq`.
-     * var text = '<% jq.each(users, function(user) { %><li><%- user %></li><% }); %>';
+     * var text = '<% jq.each(users, function(User) { %><li><%- User %></li><% }); %>';
      * var compiled = _.template(text, { 'imports': { 'jq': jQuery } });
      * compiled({ 'users': ['fred', 'barney'] });
      * // => '<li>fred</li><li>barney</li>'
      *
      * // Use the `sourceURL` option to specify a custom sourceURL for the template.
-     * var compiled = _.template('hello <%= user %>!', { 'sourceURL': '/basic/greeting.jst' });
+     * var compiled = _.template('hello <%= User %>!', { 'sourceURL': '/basic/greeting.jst' });
      * compiled(data);
      * // => Find the source of "greeting.jst" under the Sources tab or Resources panel of the web inspector.
      *
      * // Use the `variable` option to ensure a with-statement isn't used in the compiled template.
-     * var compiled = _.template('hi <%= data.user %>!', { 'variable': 'data' });
+     * var compiled = _.template('hi <%= data.User %>!', { 'variable': 'data' });
      * compiled.source;
      * // => function(data) {
      * //   var __t, __p = '';
-     * //   __p += 'hi ' + ((__t = ( data.user )) == null ? '' : __t) + '!';
+     * //   __p += 'hi ' + ((__t = ( data.User )) == null ? '' : __t) + '!';
      * //   return __p;
      * // }
      *
      * // Use custom template delimiters.
      * _.templateSettings.interpolate = /{{([\s\S]+?)}}/g;
-     * var compiled = _.template('hello {{ user }}!');
-     * compiled({ 'user': 'mustache' });
+     * var compiled = _.template('hello {{ User }}!');
+     * compiled({ 'User': 'mustache' });
      * // => 'hello mustache!'
      *
      * // Use the `source` property to inline compiled templates for meaningful
@@ -32866,20 +32866,20 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
      * @example
      *
      * var users = [
-     *   { 'user': 'barney', 'age': 36, 'active': true },
-     *   { 'user': 'fred',   'age': 40, 'active': false }
+     *   { 'User': 'barney', 'age': 36, 'active': true },
+     *   { 'User': 'fred',   'age': 40, 'active': false }
      * ];
      *
      * // The `_.matches` iteratee shorthand.
-     * _.filter(users, _.iteratee({ 'user': 'barney', 'active': true }));
-     * // => [{ 'user': 'barney', 'age': 36, 'active': true }]
+     * _.filter(users, _.iteratee({ 'User': 'barney', 'active': true }));
+     * // => [{ 'User': 'barney', 'age': 36, 'active': true }]
      *
      * // The `_.matchesProperty` iteratee shorthand.
-     * _.filter(users, _.iteratee(['user', 'fred']));
-     * // => [{ 'user': 'fred', 'age': 40 }]
+     * _.filter(users, _.iteratee(['User', 'fred']));
+     * // => [{ 'User': 'fred', 'age': 40 }]
      *
      * // The `_.property` iteratee shorthand.
-     * _.map(users, _.iteratee('user'));
+     * _.map(users, _.iteratee('User'));
      * // => ['barney', 'fred']
      *
      * // Create custom iteratee shorthands.
@@ -35535,7 +35535,7 @@ function destroy() {
 
   this.disableEventListeners();
 
-  // remove the popper if user explicitly asked for the deletion on destroy
+  // remove the popper if User explicitly asked for the deletion on destroy
   // do not use `remove` because IE11 doesn't support it
   if (this.options.removeOnDestroy) {
     this.popper.parentNode.removeChild(this.popper);
@@ -37468,7 +37468,7 @@ __webpack_require__.r(__webpack_exports__);
 
 // IMPORTANT: Do NOT use ES2015 features in this file (except for modules).
 // This module is a runtime utility for cleaner component module output and will
-// be included in the final webpack user bundle.
+// be included in the final webpack User bundle.
 
 function normalizeComponent (
   scriptExports,
@@ -37996,7 +37996,7 @@ var config = ({
   ignoredElements: [],
 
   /**
-   * Custom user key aliases for v-on
+   * Custom User key aliases for v-on
    */
   // $flow-disable-line
   keyCodes: Object.create(null),
@@ -39455,7 +39455,7 @@ function globalHandleError (err, vm, info) {
     try {
       return config.errorHandler.call(null, err, vm, info)
     } catch (e) {
-      // if the user intentionally throws the original error in the handler,
+      // if the User intentionally throws the original error in the handler,
       // do not log it twice
       if (e !== err) {
         logError(e, null, 'config.errorHandler');
@@ -39935,7 +39935,7 @@ function simpleNormalizeChildren (children) {
 }
 
 // 2. When the children contains constructs that always generated nested Arrays,
-// e.g. <template>, <slot>, v-for, or when the children is provided by user
+// e.g. <template>, <slot>, v-for, or when the children is provided by User
 // with hand-written render functions / JSX. In such cases a full normalization
 // is needed to cater to all possible types of children values.
 function normalizeChildren (children) {
@@ -41074,7 +41074,7 @@ function initRender (vm) {
   // internal version is used by render functions compiled from templates
   vm._c = function (a, b, c, d) { return createElement(vm, a, b, c, d, false); };
   // normalization is always applied for the public version, used in
-  // user-written render functions.
+  // User-written render functions.
   vm.$createElement = function (a, b, c, d) { return createElement(vm, a, b, c, d, true); };
 
   // $attrs & $listeners are exposed for easier HOC creation.
@@ -41873,8 +41873,8 @@ function flushSchedulerQueue () {
   // This ensures that:
   // 1. Components are updated from parent to child. (because parent is always
   //    created before the child)
-  // 2. A component's user watchers are run before its render watcher (because
-  //    user watchers are created before the render watcher)
+  // 2. A component's User watchers are run before its render watcher (because
+  //    User watchers are created before the render watcher)
   // 3. If a component is destroyed during a parent component's watcher run,
   //    its watchers can be skipped.
   queue.sort(function (a, b) { return a.id - b.id; });
@@ -44282,7 +44282,7 @@ function updateAttrs (oldVnode, vnode) {
   var elm = vnode.elm;
   var oldAttrs = oldVnode.data.attrs || {};
   var attrs = vnode.data.attrs || {};
-  // clone observed objects, as the user probably wants to mutate it
+  // clone observed objects, as the User probably wants to mutate it
   if (isDef(attrs.__ob__)) {
     attrs = vnode.data.attrs = extend({}, attrs);
   }
@@ -45063,7 +45063,7 @@ function genDefaultModel (
 // normalize v-model event tokens that can only be determined at runtime.
 // it's important to place the event as the first in the array because
 // the whole point is ensuring the v-model callback gets called before
-// user-attached handlers.
+// User-attached handlers.
 function normalizeEvents (on) {
   /* istanbul ignore if */
   if (isDef(on[RANGE_TOKEN])) {
@@ -45185,7 +45185,7 @@ function updateDOMProps (oldVnode, vnode) {
   var elm = vnode.elm;
   var oldProps = oldVnode.data.domProps || {};
   var props = vnode.data.domProps || {};
-  // clone observed objects, as the user probably wants to mutate it
+  // clone observed objects, as the User probably wants to mutate it
   if (isDef(props.__ob__)) {
     props = vnode.data.domProps = extend({}, props);
   }
@@ -45421,7 +45421,7 @@ function updateStyle (oldVnode, vnode) {
   var style = normalizeStyleBinding(vnode.data.style) || {};
 
   // store normalized style under a different key for next diff
-  // make sure to clone it if it's reactive, since the user likely wants
+  // make sure to clone it if it's reactive, since the User likely wants
   // to mutate it.
   vnode.data.normalizedStyle = isDef(style.__ob__)
     ? extend({}, style)

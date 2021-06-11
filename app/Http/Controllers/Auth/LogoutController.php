@@ -14,6 +14,7 @@ class LogoutController extends Controller
 
     public function logoutUser(Request $request){
 
+        //loggt das 'user'-objekt aus
         auth()->logout();
 
         return redirect()->route('index.show');
