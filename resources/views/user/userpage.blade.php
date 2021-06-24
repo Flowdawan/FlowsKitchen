@@ -33,7 +33,7 @@
             <form action="{{route('profiles.show')}}" method="POST">
                 @csrf
                 @method('delete')
-                <button class="btn-danger text-black-50" type="submit">Delete Account</button>
+                <button onclick="return confirm('Are you sure?')" class="btn-danger text-black-50" type="submit">Delete Account</button>
             </form>
         </div>
     </div>
