@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Foundation\Auth\User;
 use Illuminate\Http\Request;
 
 class UserPageController extends Controller
@@ -18,6 +19,15 @@ class UserPageController extends Controller
     {
         //$user = auth()->user();
         return view('user.userpage');
+    }
+
+    //this method get's called when someone clicks on the delete button, or exactly use the delete method on the profile page
+    //The 'User' class from laravel have a function delete, we search for the user with the id and then delete it
+    //IMPORTANT is to us ->onDelete('cascade') by all connected data (example saved recipes) foreign keys
+    public function delete(){
+        User::find(auth()->user()->id)->delete();
+        return redirect()->route('index.show');
+        //dd('Dein Account wurde gelöscht!');
     }
 }
 

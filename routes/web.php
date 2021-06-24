@@ -41,6 +41,7 @@ Route::post('logout', [LogoutController::class, 'logoutUser'])->name('logouts.sh
 
 //routes for the profilepage
 Route::get('profile', [UserPageController::class, 'show'])->name('profiles.show');
+Route::delete('profile', [UserPageController::class, 'delete']);
 
 
 //If the User goes to a site wich doesnt exist we can define a fallback route
