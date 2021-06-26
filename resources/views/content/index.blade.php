@@ -4,7 +4,7 @@
     <form autocomplete="off" action="index.php">
         <div class="justify-content-lg-center row row-cols-sm-2">
             <div class="bg-white p-3 rounded-lg col-md-4 text-center">
-                Zutaten:<br>
+                Enter an ingredient here:<br>
                 <div class="autocomplete" style="width:300px;">
                     <input type="myInput" style="width:300px;" id="myInput" type="text" placeholder="Ingredient"
                            name="ingredient"><br>
