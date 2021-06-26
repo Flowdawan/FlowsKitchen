@@ -9,6 +9,8 @@
     @yield('header_scripts')
     <title>Flow's Kitchen - @yield('title', 'Homepage')</title>
     <link rel="shortcut icon" type="image/png" href="{{url('/images/logov.png')}}"/>
+    <link rel="stylesheet" href="{{ mix('css/app.css') }}" />
+    <script defer src="{{ mix('js/app.js') }}"></script>
 </head>
 <body class="bg-dark">
 <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-end mb-2 mw-100">
