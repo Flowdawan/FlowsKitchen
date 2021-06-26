@@ -6,7 +6,7 @@
             <div class="bg-white p-3 rounded-lg col-md-4 text-center">
                 Enter an ingredient here:<br>
                 <div class="autocomplete" style="width:300px;">
-                    <input type="myInput" style="width:300px;" id="myInput" type="text" placeholder="Ingredient"
+                    <input type="myInput" style="width:300px;" id="myInput" type="text" placeholder="Cheese"
                            name="ingredient"><br>
                 </div>
             </div>
