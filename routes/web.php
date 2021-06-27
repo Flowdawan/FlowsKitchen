@@ -34,6 +34,7 @@ Route::view('map', 'content.map')->name('maps.show');
 Route::get('register', [RegisterController::class, 'index'])->name('registers.show');
 Route::post('register', [RegisterController::class, 'store']);
 
+
 Route::get('login', [LoginController::class, 'index'])->name('logins.show');
 Route::post('login', [LoginController::class, 'loginUser']);
 
@@ -42,11 +43,12 @@ Route::post('logout', [LogoutController::class, 'logoutUser'])->name('logouts.sh
 //routes for the profilepage
 Route::get('profile', [UserPageController::class, 'show'])->name('profiles.show');
 Route::delete('profile', [UserPageController::class, 'delete']);
+Route::put('profile', [UserPageController::class, 'put']);
 
 
 //If the User goes to a site wich doesnt exist we can define a fallback route
 Route::fallback(function () {
-    return 'Oh no crap - this site doesn\'t exist';
+    return view('content.404_page');
 });
 
 /*

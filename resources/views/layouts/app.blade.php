@@ -25,9 +25,11 @@
                 <li>
                     <a class="nav-link" href="{{route('index.show')}}">Home</a>
                 </li>
+                @auth
                 <li>
                     <a class="nav-link" href="<?php echo route('recipes.show')?>">Recipes</a>
                 </li>
+                @endauth
                 <li>
                     <a class="nav-link" href="<?php echo route('abouts.show')?>">About</a>
                 </li>
@@ -67,7 +69,7 @@
     <!-- Copyright -->
     <div class="p-3">
         © 2020 Copyright:
-        <a class="text-dark" href="/">Flow's kitchen</a>
+        <a class="text-dark" href="{{ route('index.show') }}">Flow's kitchen</a>
     </div>
 </footer>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"

@@ -21,8 +21,8 @@ class RegisterController extends Controller
         // validation the $request object gives information about the submitted data (dd($request->email);)
         //and the validate method comes with laravel and defined rules which we can just use
         $this->validate($request, [
-            'name' => 'required|max:255',
-            'email' => 'required|email|unique:users,email|max:255',
+            'name' => 'required|max:100',
+            'email' => 'required|email|unique:users,email|max:120',
             'password' => 'required|confirmed'
         ]);
 
