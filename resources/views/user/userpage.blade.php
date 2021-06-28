@@ -69,7 +69,7 @@
                            value="">
                 </div>
             </div>
-            <div class="align-content-center text-center">
+            <div class="align-content-center text-center text-white">
 
                 <button onclick="changeAccount()" class="btn-info text-black-50 m-2" id="edit_button" type="button">
                     Change

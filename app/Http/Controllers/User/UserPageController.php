@@ -33,7 +33,7 @@ class UserPageController extends Controller
     }
 
     public function put(Request $request){
-        if(auth()->user()->email == $request->email){
+        if (auth()->user()->email == $request->email) {
             $this->validate($request, [
                 'name' => 'required|max:100',
                 'password' => 'required|confirmed'
@@ -48,7 +48,7 @@ class UserPageController extends Controller
         //dd($request->request);
         DB::table('users')
             ->where('id', auth()->user()->id)
-            ->update(array('name' => $request->name,'email' => $request->email, 'password' => Hash::make($request->password)));
+            ->update(array('name' => $request->name, 'email' => $request->email, 'password' => Hash::make($request->password)));
 
         //update users set name = ?,email=?,password=? where id = ?', [$request->name, $request->email, auth()->user()->id]);
         return redirect()->route('profiles.show');
