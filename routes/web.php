@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
+use App\Http\Controllers\User\RecipeController;
 use App\Http\Controllers\User\UserPageController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\RegisterController;
@@ -20,9 +21,6 @@ use App\Http\Controllers\Auth\RegisterController;
 
 
 Route::view('/', 'content.index')->name('index.show');
-
-
-Route::view('recipes', 'content.recipes')->name('recipes.show');
 
 Route::view('about', 'content.about')->name('abouts.show');
 
@@ -45,6 +43,11 @@ Route::get('profile', [UserPageController::class, 'show'])->name('profiles.show'
 Route::delete('profile', [UserPageController::class, 'delete']);
 Route::put('profile', [UserPageController::class, 'put']);
 
+//to show the saved recipes for an user
+Route::get('recipes', [RecipeController::class, 'show'])->name('recipes.show');
+
+Route::post('recipes', [RecipeController::class, 'store']);
+
 
 //If the User goes to a site which doesnt exist we can define a fallback route
 Route::fallback(function () {
@@ -53,6 +56,11 @@ Route::fallback(function () {
 
 /*
  * Testing routes
+ *
+ *
+Route::get('recipes/api', function(){
+    return response()->json(auth()->user());
+});
 Route::get('/', [TasksController::class, 'index']);
 
 Route::get('test', function(){
