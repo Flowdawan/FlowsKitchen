@@ -131,8 +131,11 @@ export default {
         },
 
         bookmark(){
-            console.log("TESTBOOKMARK ID: " + event.currentTarget.id);
-            this.bookmarkedMealId = event.currentTarget.id;
+            axios.post('/recipes', {
+                    recipeId: event.currentTarget.id,
+            });
+            //axios.post("/recipes", event.currentTarget.id);
+            //console.log("TESTBOOKMARK ID: " + event.currentTarget.id);
         }
     },
 
@@ -140,9 +143,6 @@ export default {
         url: function () {
             this.showMeals();
         },
-        bookmarkedMealId: function(val) {
-            this.$root.mealId = val;
-        }
     }
 }
 </script>

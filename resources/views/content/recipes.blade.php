@@ -6,6 +6,10 @@
 
     <form action="{{route('recipes.show')}}" method="POST">
         @csrf
+        <input id="recipeId" type="text"
+                name="recipeId"
+               value="" autofocus>
+
         <button class="btn-danger text-black-50" type="submit"
                 id="post_something">Post
             Account

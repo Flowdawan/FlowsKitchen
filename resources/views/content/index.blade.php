@@ -1,6 +1,8 @@
 @extends('layouts.app')
 @section('title', 'Home')
 @section('content')
+
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <div id="app">
         <ingredients></ingredients>
         <meals></meals>
