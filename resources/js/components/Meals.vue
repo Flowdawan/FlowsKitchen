@@ -1,25 +1,29 @@
 <template>
     <ul class="list-inline">
         <li class="height: 220px;  list-inline-item bg-secondary text-white rounded-lg m-2" v-for="meal in meals">
-            <div :id="meal.idMeal" v-on:click="showMeal">
+            <div :id="meal.idMeal">
                 <img :src="meal.strMealThumb" class="thumbnail">
                 <p class="mealTitle">{{meal.strMeal}}</p>
             </div>
 
-            <div class="modal" :id="meal.idMeal + 'modal'" tabindex="-1" role="dialog">
+            <div class="modal text-dark" :id="meal.idMeal + 'modal'" tabindex="-1" role="dialog">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title text-dark">{{meal.strMeal}}</h5>
+                            <h5 class="modal-title">{{meal.strMeal}}</h5>
                             <button type="button" class="close" :id="meal.idMeal + 'closeSpn'" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
                         <div class="modal-body">
-                            <img :src="meal.strMealThumb" class="imgMeal">
+                            <div class="container-fluid">
+                                <img :src="meal.strMealThumb" class="img-fluid">
+                                <div v-html="meal.strIngredients" class="font-italic float-right"></div>
+                                <div v-html="meal.strInstructions" class="font-italic"></div>
+                            </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-primary">Save changes</button>
+                            <button type="button" class="btn btn-primary">Add to MyRecipes</button>
                             <button type="button" :id="meal.idMeal + 'closeBtn'" class="btn btn-secondary" data-dismiss="modal">Close</button>
                         </div>
                     </div>
@@ -42,43 +46,60 @@ export default {
 
     data() {
         return {
+            meal: null,
             meals: [],
-            url: ''
+            url_meal: null,
         }
     },
 
-    methods: {
-
-        showMeals(){
-            fetch(this.url)
-                .then(response => response.json())
-                .then(json => {
-                    this.meals = json.meals;
-                    if(json.meals == null) {
-                        this.url = this.url.replace("https://www.themealdb.com/api/json/v2/9973533/filter.php?i=","https://www.themealdb.com/api/json/v1/1/filter.php?i=")
-                        fetch(this.url)
-                            .then(response => response.json())
-                            .then(json => {
-                                this.meals = json.meals;
-                            });
-                    }
-                });
+    methods: {async fetchURL(mealsOrMeal){
+            if(mealsOrMeal == "meals") {
+                const response = await fetch(this.url);
+                const json = await response.json();
+                this.meals = json.meals;
+            } else if(mealsOrMeal == "meal"){
+                const response = await fetch(this.url_meal);
+                const json = await response.json();
+                this.meal = null;
+                this.meal = json.meals[0];
+            }
         },
 
-        showMeal(){
-            this.url_meal = null;
-            this.url_meal = "https://www.themealdb.com/api/json/v2/9973533/lookup.php?i=" + event.currentTarget.id;
-            fetch(this.url_meal)
-                .then(response => response.json())
-                .then(json => {
-                    this.meal = json.meals[0];
-                });
+        async showMeals(){
+            await this.fetchURL("meals");
+            for(let i = 0; i < this.meals.length; i++) {
+                await this.showMeal(this.meals[i].idMeal, i);
+                this.createModal(this.meals[i].idMeal);
+            }
+            this.$forceUpdate();
+        },
 
-            let modal = document.getElementById(event.currentTarget.id + "modal");
-            let div = document.getElementById(event.currentTarget.id);
-            let closeSpn = document.getElementById(event.currentTarget.id + "closeSpn");
-            let closeBtn = document.getElementById(event.currentTarget.id + "closeBtn");
-            setTimeout(() => { console.log(this.meal.strMeal); }, 250);
+        async showMeal(id,index){
+            this.url_meal = null;
+            this.url_meal = "https://www.themealdb.com/api/json/v2/9973533/lookup.php?i=" + id;
+            await this.fetchURL("meal");
+            let allIngredients = this.getAllIngredients();
+            this.meals[index]["strIngredients"] = allIngredients;
+            this.meals[index]["strYoutube"] = this.meal.strYoutube;
+            this.meals[index]["strInstructions"] = this.meal.strInstructions.replace(/\r\n/g, "<br />");
+        },
+
+        getAllIngredients() {
+            let ingredients = "<p>";
+            let num = 1;
+            while(this.meal[`strIngredient${num}`] != "" && this.meal[`strIngredient${num}`] != null )
+            {
+                ingredients += this.meal[`strMeasure${num}`] + " of " + this.meal[`strIngredient${num}`] + "<br>";
+                num++;
+            }
+            return ingredients + "</p>";
+        },
+
+        createModal(id) {
+            let modal = document.getElementById(id + "modal");
+            let div = document.getElementById(id);
+            let closeSpn = document.getElementById(id + "closeSpn");
+            let closeBtn = document.getElementById(id + "closeBtn");
             div.onclick = function() {
                 modal.style.display = "block";
             }
@@ -94,16 +115,13 @@ export default {
                 }
             }
 
-            /*this.getRecipe(this.meal);*/
-
         }
-
-
     },
 
-    updated () {
-        this.showMeals();
-        console.log("MEALS.VUE: " + this.url);
+    watch: {
+        url: function () {
+            this.showMeals();
+        }
     }
 }
 </script>
