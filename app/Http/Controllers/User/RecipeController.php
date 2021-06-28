@@ -20,6 +20,7 @@ class RecipeController extends Controller
     public function store(Request $request){
 
         dd($request);
+
         $request->user()->recipes()->create($request->only('recipeId'));
         //dd('Wir haben einen Post');
         //return back();
