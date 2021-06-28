@@ -2018,6 +2018,12 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "Meals",
   props: ['url'],
@@ -2094,33 +2100,38 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           while (1) {
             switch (_context2.prev = _context2.next) {
               case 0:
-                _context2.next = 2;
+                document.getElementById("loadingWheel").style.display = "block";
+                _context2.next = 3;
                 return _this2.fetchURL("meals");
 
-              case 2:
+              case 3:
                 i = 0;
 
-              case 3:
+              case 4:
                 if (!(i < _this2.meals.length)) {
-                  _context2.next = 10;
+                  _context2.next = 11;
                   break;
                 }
 
-                _context2.next = 6;
+                _context2.next = 7;
                 return _this2.showMeal(_this2.meals[i].idMeal, i);
 
-              case 6:
+              case 7:
                 _this2.createModal(_this2.meals[i].idMeal);
 
-              case 7:
+              case 8:
                 i++;
-                _context2.next = 3;
+                _context2.next = 4;
                 break;
 
-              case 10:
-                _this2.$forceUpdate();
-
               case 11:
+                _context2.next = 13;
+                return _this2.$forceUpdate();
+
+              case 13:
+                document.getElementById("loadingWheel").style.display = "none";
+
+              case 14:
               case "end":
                 return _context2.stop();
             }
@@ -2145,8 +2156,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               case 4:
                 allIngredients = _this3.getAllIngredients();
                 _this3.meals[index]["strIngredients"] = allIngredients;
-                _this3.meals[index]["strYoutube"] = _this3.meal.strYoutube;
-                _this3.meals[index]["strInstructions"] = _this3.meal.strInstructions.replace(/\r\n/g, "<br />");
+                _this3.meals[index]["strYoutube"] = _this3.meal.strYoutube.replace("/watch?v=", "/embed/");
+                _this3.meals[index]["strInstructions"] = _this3.meal.strInstructions.replace(/\n/g, '<br>');
 
               case 8:
               case "end":
@@ -2161,8 +2172,13 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       var num = 1;
 
       while (this.meal["strIngredient".concat(num)] != "" && this.meal["strIngredient".concat(num)] != null) {
-        ingredients += this.meal["strMeasure".concat(num)] + " of " + this.meal["strIngredient".concat(num)] + "<br>";
-        num++;
+        if (this.meal["strMeasure".concat(num)] != "" && this.meal["strMeasure".concat(num)] != null) {
+          ingredients += this.meal["strMeasure".concat(num)] + " " + this.meal["strIngredient".concat(num)] + "<br>";
+          num++;
+        } else {
+          ingredients += this.meal["strIngredient".concat(num)] + "<br>";
+          num++;
+        }
       }
 
       return ingredients + "</p>";
@@ -6922,7 +6938,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\nul[data-v-8d565496] {\n    margin: 15px 15%;\n}\nli[data-v-8d565496] {\n    width: 18%;\n    position: relative;\n    border-color: white 1px;\n}\np.mealTitle[data-v-8d565496] {\n    width: 100%;\n    position: absolute;\n    bottom: 0;\n    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;\n    font-family: sans-serif; color: white;\n    font-size: 26px;\n}\nimg.thumbnail[data-v-8d565496] {\n    width: 100%;\n    height: 140px;\n}\n\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\nul[data-v-8d565496] {\n    margin: 15px 15%;\n}\nli[data-v-8d565496] {\n    width: 18%;\n    position: relative;\n    border-color: white 1px;\n}\np.mealTitle[data-v-8d565496] {\n    width: 100%;\n    position: absolute;\n    bottom: 0;\n    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;\n    font-family: sans-serif; color: white;\n    font-size: 26px;\n}\nimg.thumbnail[data-v-8d565496] {\n    width: 100%;\n    height: 140px;\n}\n.modal[data-v-8d565496] {\n    margin-left: 25%;\n    margin-right: 25%;\n}\n#modalImg[data-v-8d565496] {\n    max-width: 50%;\n    height: auto;\n}\n.loader[data-v-8d565496] {\n    border: 16px solid #f3f3f3;\n    border-radius: 50%;\n    border-top: 16px solid #3498db;\n    width: 360px;\n    height: 360px;\n    -webkit-animation: spin-data-v-8d565496 2s linear infinite; /* Safari */\n    animation: spin-data-v-8d565496 2s linear infinite;\n\n    position:fixed;\n    top:25%;\n    left:40%;\n    transform:translate(-50%, -50%);\n    z-index: 1000;\n\n    display: none;\n}\n\n/* Safari */\n@-webkit-keyframes spin-data-v-8d565496 {\n0% { -webkit-transform: rotate(0deg);\n}\n100% { -webkit-transform: rotate(360deg);\n}\n}\n@keyframes spin-data-v-8d565496 {\n0% { transform: rotate(0deg);\n}\n100% { transform: rotate(360deg);\n}\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -39507,7 +39523,10 @@ var render = function() {
               [
                 _c(
                   "div",
-                  { staticClass: "modal-dialog", attrs: { role: "document" } },
+                  {
+                    staticClass: "modal-dialog-scrollable modal-lg",
+                    attrs: { role: "document" }
+                  },
                   [
                     _c("div", { staticClass: "modal-content" }, [
                       _c("div", { staticClass: "modal-header" }, [
@@ -39537,21 +39556,32 @@ var render = function() {
                       _c("div", { staticClass: "modal-body" }, [
                         _c("div", { staticClass: "container-fluid" }, [
                           _c("img", {
-                            staticClass: "img-fluid",
-                            attrs: { src: meal.strMealThumb }
+                            staticClass: "img-fluid float-left",
+                            attrs: { src: meal.strMealThumb, id: "modalImg" }
                           }),
                           _vm._v(" "),
-                          _c("div", {
-                            staticClass: "font-italic float-right",
-                            domProps: { innerHTML: _vm._s(meal.strIngredients) }
-                          }),
-                          _vm._v(" "),
-                          _c("div", {
-                            staticClass: "font-italic",
-                            domProps: {
-                              innerHTML: _vm._s(meal.strInstructions)
+                          _c("iframe", {
+                            attrs: {
+                              width: "350",
+                              height: "360",
+                              src: meal.strYoutube
                             }
-                          })
+                          }),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "text-center" }, [
+                            _c("div", {
+                              staticClass: "font-italic",
+                              domProps: {
+                                innerHTML: _vm._s(meal.strIngredients)
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c("div", {
+                              domProps: {
+                                innerHTML: _vm._s(meal.strInstructions)
+                              }
+                            })
+                          ])
                         ])
                       ]),
                       _vm._v(" "),
@@ -39589,7 +39619,9 @@ var render = function() {
       _vm._v(" "),
       _c("div", { staticClass: "invisible", attrs: { id: "meals" } }, [
         _vm._v("\n        " + _vm._s(_vm.url) + "\n    ")
-      ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "loader", attrs: { id: "loadingWheel" } })
     ],
     2
   )

@@ -7,7 +7,7 @@
             </div>
 
             <div class="modal text-dark" :id="meal.idMeal + 'modal'" tabindex="-1" role="dialog">
-                <div class="modal-dialog" role="document">
+                <div class="modal-dialog-scrollable modal-lg" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title">{{meal.strMeal}}</h5>
@@ -17,9 +17,14 @@
                         </div>
                         <div class="modal-body">
                             <div class="container-fluid">
-                                <img :src="meal.strMealThumb" class="img-fluid">
-                                <div v-html="meal.strIngredients" class="font-italic float-right"></div>
-                                <div v-html="meal.strInstructions" class="font-italic"></div>
+                                <img :src="meal.strMealThumb" class="img-fluid float-left" id="modalImg">
+                                <iframe width="350" height="360"
+                                        :src="meal.strYoutube">
+                                </iframe>
+                                <div class="text-center">
+                                    <div v-html="meal.strIngredients" class="font-italic"></div>
+                                    <div v-html="meal.strInstructions"></div>
+                                </div>
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -34,6 +39,7 @@
         <div id='meals' class="invisible">
             {{url}}
         </div>
+        <div class="loader" id="loadingWheel"></div>
     </ul>
 
 </template>
@@ -66,12 +72,14 @@ export default {
         },
 
         async showMeals(){
+            document.getElementById("loadingWheel").style.display = "block";
             await this.fetchURL("meals");
             for(let i = 0; i < this.meals.length; i++) {
                 await this.showMeal(this.meals[i].idMeal, i);
                 this.createModal(this.meals[i].idMeal);
             }
-            this.$forceUpdate();
+            await this.$forceUpdate();
+            document.getElementById("loadingWheel").style.display = "none";
         },
 
         async showMeal(id,index){
@@ -80,8 +88,8 @@ export default {
             await this.fetchURL("meal");
             let allIngredients = this.getAllIngredients();
             this.meals[index]["strIngredients"] = allIngredients;
-            this.meals[index]["strYoutube"] = this.meal.strYoutube;
-            this.meals[index]["strInstructions"] = this.meal.strInstructions.replace(/\r\n/g, "<br />");
+            this.meals[index]["strYoutube"] = this.meal.strYoutube.replace("/watch?v=", "/embed/");
+            this.meals[index]["strInstructions"] = this.meal.strInstructions.replace(/\n/g,'<br>');
         },
 
         getAllIngredients() {
@@ -89,8 +97,14 @@ export default {
             let num = 1;
             while(this.meal[`strIngredient${num}`] != "" && this.meal[`strIngredient${num}`] != null )
             {
-                ingredients += this.meal[`strMeasure${num}`] + " of " + this.meal[`strIngredient${num}`] + "<br>";
-                num++;
+                if(this.meal[`strMeasure${num}`] != "" && this.meal[`strMeasure${num}`] != null){
+                    ingredients += this.meal[`strMeasure${num}`] + " " + this.meal[`strIngredient${num}`] + "<br>";
+                    num++;
+                } else {
+                    ingredients += this.meal[`strIngredient${num}`] + "<br>";
+                    num++;
+                }
+
             }
             return ingredients + "</p>";
         },
@@ -130,6 +144,7 @@ export default {
 
 ul {
     margin: 15px 15%;
+
 }
 
 li {
@@ -152,4 +167,42 @@ img.thumbnail {
     height: 140px;
 }
 
+.modal {
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+#modalImg {
+    max-width: 50%;
+    height: auto;
+}
+
+.loader {
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #3498db;
+    width: 360px;
+    height: 360px;
+    -webkit-animation: spin 2s linear infinite; /* Safari */
+    animation: spin 2s linear infinite;
+
+    position:fixed;
+    top:25%;
+    left:40%;
+    transform:translate(-50%, -50%);
+    z-index: 1000;
+
+    display: none;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
 </style>
