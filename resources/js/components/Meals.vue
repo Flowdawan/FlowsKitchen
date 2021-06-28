@@ -5,6 +5,27 @@
                 <img :src="meal.strMealThumb" class="thumbnail">
                 <p class="mealTitle">{{meal.strMeal}}</p>
             </div>
+
+            <div class="modal" :id="meal.idMeal + 'modal'" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title text-dark">{{meal.strMeal}}</h5>
+                            <button type="button" class="close" :id="meal.idMeal + 'closeSpn'" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <img :src="meal.strMealThumb" class="imgMeal">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                            <button type="button" :id="meal.idMeal + 'closeBtn'" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </li>
         <div id='meals' class="invisible">
             {{url}}
@@ -45,8 +66,38 @@ export default {
         },
 
         showMeal(){
-            let targetId = event.currentTarget.id;
+            this.url_meal = null;
+            this.url_meal = "https://www.themealdb.com/api/json/v2/9973533/lookup.php?i=" + event.currentTarget.id;
+            fetch(this.url_meal)
+                .then(response => response.json())
+                .then(json => {
+                    this.meal = json.meals[0];
+                });
+
+            let modal = document.getElementById(event.currentTarget.id + "modal");
+            let div = document.getElementById(event.currentTarget.id);
+            let closeSpn = document.getElementById(event.currentTarget.id + "closeSpn");
+            let closeBtn = document.getElementById(event.currentTarget.id + "closeBtn");
+            setTimeout(() => { console.log(this.meal.strMeal); }, 250);
+            div.onclick = function() {
+                modal.style.display = "block";
+            }
+            closeSpn.onclick = function() {
+                modal.style.display = "none";
+            }
+            closeBtn.onclick = function() {
+                modal.style.display = "none";
+            }
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+
+            /*this.getRecipe(this.meal);*/
+
         }
+
 
     },
 

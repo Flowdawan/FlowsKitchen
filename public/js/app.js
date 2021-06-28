@@ -1974,6 +1974,27 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "Meals",
   props: ['url'],
@@ -2003,7 +2024,42 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     showMeal: function showMeal() {
-      var targetId = event.currentTarget.id;
+      var _this2 = this;
+
+      this.url_meal = null;
+      this.url_meal = "https://www.themealdb.com/api/json/v2/9973533/lookup.php?i=" + event.currentTarget.id;
+      fetch(this.url_meal).then(function (response) {
+        return response.json();
+      }).then(function (json) {
+        _this2.meal = json.meals[0];
+      });
+      var modal = document.getElementById(event.currentTarget.id + "modal");
+      var div = document.getElementById(event.currentTarget.id);
+      var closeSpn = document.getElementById(event.currentTarget.id + "closeSpn");
+      var closeBtn = document.getElementById(event.currentTarget.id + "closeBtn");
+      setTimeout(function () {
+        console.log(_this2.meal.strMeal);
+      }, 250);
+
+      div.onclick = function () {
+        modal.style.display = "block";
+      };
+
+      closeSpn.onclick = function () {
+        modal.style.display = "none";
+      };
+
+      closeBtn.onclick = function () {
+        modal.style.display = "none";
+      };
+
+      window.onclick = function (event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      };
+      /*this.getRecipe(this.meal);*/
+
     }
   },
   updated: function updated() {
@@ -38550,6 +38606,82 @@ var render = function() {
                 _c("p", { staticClass: "mealTitle" }, [
                   _vm._v(_vm._s(meal.strMeal))
                 ])
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass: "modal",
+                attrs: {
+                  id: meal.idMeal + "modal",
+                  tabindex: "-1",
+                  role: "dialog"
+                }
+              },
+              [
+                _c(
+                  "div",
+                  { staticClass: "modal-dialog", attrs: { role: "document" } },
+                  [
+                    _c("div", { staticClass: "modal-content" }, [
+                      _c("div", { staticClass: "modal-header" }, [
+                        _c("h5", { staticClass: "modal-title text-dark" }, [
+                          _vm._v(_vm._s(meal.strMeal))
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "button",
+                          {
+                            staticClass: "close",
+                            attrs: {
+                              type: "button",
+                              id: meal.idMeal + "closeSpn",
+                              "data-dismiss": "modal",
+                              "aria-label": "Close"
+                            }
+                          },
+                          [
+                            _c("span", { attrs: { "aria-hidden": "true" } }, [
+                              _vm._v("×")
+                            ])
+                          ]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "modal-body" }, [
+                        _c("img", {
+                          staticClass: "imgMeal",
+                          attrs: { src: meal.strMealThumb }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "modal-footer" }, [
+                        _c(
+                          "button",
+                          {
+                            staticClass: "btn btn-primary",
+                            attrs: { type: "button" }
+                          },
+                          [_vm._v("Save changes")]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "button",
+                          {
+                            staticClass: "btn btn-secondary",
+                            attrs: {
+                              type: "button",
+                              id: meal.idMeal + "closeBtn",
+                              "data-dismiss": "modal"
+                            }
+                          },
+                          [_vm._v("Close")]
+                        )
+                      ])
+                    ])
+                  ]
+                )
               ]
             )
           ]
