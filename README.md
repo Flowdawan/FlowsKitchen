@@ -41,7 +41,7 @@
 <h2>How to run the project:</h2>
 
 
-- <a href="https://devmarketer.io/learn/setup-laravel-project-cloned-github-com/https://vuejs.org/" alt="Github clone">Just cloned from github</a>
+- <a href="https://devmarketer.io/learn/setup-laravel-project-cloned-github-com/" alt="Github clone">Just cloned from github</a>
 - <a href="https://thecodedeveloper.com/install-laravel-with-xampp-using-composer/" alt="XAMPP">With XAMPP</a>
 - <a href="https://laravel.com/docs/4.2/quick" alt="mysql">Start a laravel server without xampp</a>
   - <p>php artisan serve --port=*port number*</p>
