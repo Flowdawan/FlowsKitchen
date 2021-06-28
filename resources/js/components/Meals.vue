@@ -128,7 +128,6 @@ export default {
                     modal.style.display = "none";
                 }
             }
-
         },
 
         bookmark(){
