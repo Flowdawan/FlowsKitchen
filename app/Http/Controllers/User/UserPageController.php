@@ -51,9 +51,7 @@ class UserPageController extends Controller
             ->update(array('name' => $request->name,'email' => $request->email, 'password' => Hash::make($request->password)));
 
         //update users set name = ?,email=?,password=? where id = ?', [$request->name, $request->email, auth()->user()->id]);
-
         return redirect()->route('profiles.show');
-
     }
 }
 
