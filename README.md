@@ -22,6 +22,7 @@
 <h2>Technology used for this website:</h2>
 
 - <a href="https://www.positronx.io/laravel-ajax-example-tutorial/" alt="ajax">JavaScript with Ajax</a>
+- <a href="https://vuejs.org/" alt="vue.js">Vue.js</a>
 - <a href="https://getbootstrap.com/" alt="bootstrap">Bootstrap</a>
 - <a href="https://www.mysql.com/de/" alt="mysql">MySql</a>
 - <a href="https://laravel.com/" alt="Laravel">Php with Laravel</a> 
@@ -32,6 +33,20 @@
 <h2>Api for the data:</h2>
 
 - <a href="https://www.themealdb.com/api.php" alt="The meal DB">The meal db</a>
+- <a href="https://developers.google.com/maps/documentation?hl=de" alt="Google Maps">Google Maps Api</a>
+
+- - -
+
+
+<h2>How to run the project:</h2>
+
+
+- <a href="https://devmarketer.io/learn/setup-laravel-project-cloned-github-com/https://vuejs.org/" alt="Github clone">Just cloned from github</a>
+- <a href="https://thecodedeveloper.com/install-laravel-with-xampp-using-composer/" alt="XAMPP">With XAMPP</a>
+- <a href="https://laravel.com/docs/4.2/quick" alt="mysql">Start a laravel server without xampp</a>
+  - <p>php artisan serve --port=*port number*</p>
+- <a href="https://nodejs.org/en/download/" alt="node.js">Download node</a>
+
 
 - - -
 
