@@ -5,6 +5,7 @@ namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class UserPageController extends Controller
 {
@@ -28,6 +29,30 @@ class UserPageController extends Controller
         User::find(auth()->user()->id)->delete();
         return redirect()->route('index.show');
         //dd('Dein Account wurde gelöscht!');
+    }
+
+    public function put(Request $request){
+        if(auth()->user()->email == $request->email){
+            $this->validate($request, [
+                'name' => 'required|max:100',
+                'password' => 'required|confirmed'
+            ]);
+        }else{
+            $this->validate($request, [
+                'name' => 'required|max:100',
+                'email' => 'required|email|unique:users,email|max:120',
+                'password' => 'required|confirmed'
+            ]);
+        }
+        //dd($request->request);
+        DB::table('users')
+            ->where('id', auth()->user()->id)
+            ->update(array('name' => $request->name,'email' => $request->email));
+
+        //update users set name = ?,email=?,password=? where id = ?', [$request->name, $request->email, auth()->user()->id]);
+
+        return redirect()->route('profiles.show');
+
     }
 }
 
