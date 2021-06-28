@@ -114,6 +114,14 @@ export default {
             let div = document.getElementById(id + "thumbnail");
             let closeSpn = document.getElementById(id + "closeSpn");
             let closeBtn = document.getElementById(id + "closeBtn");
+            let addBtn = document.getElementById(id);
+
+            if(window.auth_user != "notLoggedIn") {
+                addBtn.style.display = "block";
+                this.userId = window.auth_user.id;
+            } else {
+                addBtn.style.display = "none";
+            }
             div.onclick = function() {
                 modal.style.display = "block";
             }
@@ -131,11 +139,8 @@ export default {
         },
 
         bookmark(){
-            axios.post('/recipes', {
-                    recipeId: event.currentTarget.id,
-            });
-            //axios.post("/recipes", event.currentTarget.id);
-            //console.log("TESTBOOKMARK ID: " + event.currentTarget.id);
+            console.log("TESTBOOKMARK ID: " + event.currentTarget.id);
+            this.bookmarkedMealId = event.currentTarget.id;
         }
     },
 
@@ -143,6 +148,9 @@ export default {
         url: function () {
             this.showMeals();
         },
+        bookmarkedMealId: function(val) {
+            this.$root.mealId = val;
+        }
     }
 }
 </script>

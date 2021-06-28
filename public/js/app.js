@@ -1932,7 +1932,6 @@ __webpack_require__.r(__webpack_exports__);
       this.ingredient = document.getElementById("myInput").value;
       var url = 'https://www.themealdb.com/api/json/v2/9973533/filter.php?i=' + this.ingredient;
       this.url = url.replace(" ", "_");
-      console.log(this.url);
     },
     autoComplete: function autoComplete() {
       _autocomplete_js__WEBPACK_IMPORTED_MODULE_0__.default.autocomplete(document.getElementById("myInput"), this.ingredients);
@@ -2189,6 +2188,14 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       var div = document.getElementById(id + "thumbnail");
       var closeSpn = document.getElementById(id + "closeSpn");
       var closeBtn = document.getElementById(id + "closeBtn");
+      var addBtn = document.getElementById(id);
+
+      if (window.auth_user != "notLoggedIn") {
+        addBtn.style.display = "block";
+        this.userId = window.auth_user.id;
+      } else {
+        addBtn.style.display = "none";
+      }
 
       div.onclick = function () {
         modal.style.display = "block";
@@ -2209,15 +2216,16 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       };
     },
     bookmark: function bookmark() {
-      axios.post('/recipes', {
-        recipeId: event.currentTarget.id
-      }); //axios.post("/recipes", event.currentTarget.id);
-      //console.log("TESTBOOKMARK ID: " + event.currentTarget.id);
+      console.log("TESTBOOKMARK ID: " + event.currentTarget.id);
+      this.bookmarkedMealId = event.currentTarget.id;
     }
   },
   watch: {
     url: function url() {
       this.showMeals();
+    },
+    bookmarkedMealId: function bookmarkedMealId(val) {
+      this.$root.mealId = val;
     }
   }
 });
@@ -2271,12 +2279,7 @@ vue__WEBPACK_IMPORTED_MODULE_0__.default.component('ingredients', __webpack_requ
  */
 
 var app = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
-  el: '#app',
-  data: function data() {
-    return {
-      mealId: ''
-    };
-  }
+  el: '#app'
 });
 
 /***/ }),
@@ -6926,7 +6929,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.autocomplete[data-v-962edab2] {\r\n    /*the container must be positioned relative:*/\r\n    position: relative;\r\n    display: inline-block;\n}\n.autocomplete-items[data-v-962edab2] {\r\n    position: absolute;\r\n    border: 1px solid #d4d4d4;\r\n    border-bottom: none;\r\n    border-top: none;\r\n    z-index: 99;\r\n    /*position the autocomplete items to be the same width as the container:*/\r\n    top: 100%;\r\n    left: 0;\r\n    right: 0;\n}\n.autocomplete-items div[data-v-962edab2] {\r\n    padding: 10px;\r\n    cursor: pointer;\r\n    background-color: #fff;\r\n    border-bottom: 1px solid #d4d4d4;\n}\n.autocomplete-items div[data-v-962edab2]:hover {\r\n    /*when hovering an item:*/\r\n    background-color: #e9e9e9;\n}\n.autocomplete-active[data-v-962edab2] {\r\n    /*when navigating through the items using the arrow keys:*/\r\n    background-color: DodgerBlue !important;\r\n    color: #ffffff;\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.autocomplete[data-v-962edab2] {\n    /*the container must be positioned relative:*/\n    position: relative;\n    display: inline-block;\n}\n.autocomplete-items[data-v-962edab2] {\n    position: absolute;\n    border: 1px solid #d4d4d4;\n    border-bottom: none;\n    border-top: none;\n    z-index: 99;\n    /*position the autocomplete items to be the same width as the container:*/\n    top: 100%;\n    left: 0;\n    right: 0;\n}\n.autocomplete-items div[data-v-962edab2] {\n    padding: 10px;\n    cursor: pointer;\n    background-color: #fff;\n    border-bottom: 1px solid #d4d4d4;\n}\n.autocomplete-items div[data-v-962edab2]:hover {\n    /*when hovering an item:*/\n    background-color: #e9e9e9;\n}\n.autocomplete-active[data-v-962edab2] {\n    /*when navigating through the items using the arrow keys:*/\n    background-color: DodgerBlue !important;\n    color: #ffffff;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

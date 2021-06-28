@@ -42,7 +42,6 @@ export default {
             this.ingredient = document.getElementById("myInput").value;
             let url = 'https://www.themealdb.com/api/json/v2/9973533/filter.php?i=' + this.ingredient;
             this.url = url.replace(" ","_");
-            console.log(this.url);
         },
 
         autoComplete: function () {
