@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class UserPageController extends Controller
 {
@@ -47,7 +48,7 @@ class UserPageController extends Controller
         //dd($request->request);
         DB::table('users')
             ->where('id', auth()->user()->id)
-            ->update(array('name' => $request->name,'email' => $request->email));
+            ->update(array('name' => $request->name,'email' => $request->email, 'password' => Hash::make($request->password)));
 
         //update users set name = ?,email=?,password=? where id = ?', [$request->name, $request->email, auth()->user()->id]);
 
