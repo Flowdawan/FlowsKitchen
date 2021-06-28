@@ -40,13 +40,13 @@ Route::post('login', [LoginController::class, 'loginUser']);
 
 Route::post('logout', [LogoutController::class, 'logoutUser'])->name('logouts.show');
 
-//routes for the profilepage
+//routes for the profile page
 Route::get('profile', [UserPageController::class, 'show'])->name('profiles.show');
 Route::delete('profile', [UserPageController::class, 'delete']);
 Route::put('profile', [UserPageController::class, 'put']);
 
 
-//If the User goes to a site wich doesnt exist we can define a fallback route
+//If the User goes to a site which doesnt exist we can define a fallback route
 Route::fallback(function () {
     return view('content.404_page');
 });

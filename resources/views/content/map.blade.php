@@ -1,15 +1,16 @@
 @extends('layouts.app')
 @section('title', 'Map')
 @section('header_scripts')
+
     <script async defer
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC3i0kUn8NHBQ5RjzFHTn4VK56PJQNGOKo&callback=initMap">
+            src= "https://maps.googleapis.com/maps/api/js?key=AIzaSyC3i0kUn8NHBQ5RjzFHTn4VK56PJQNGOKo&callback=initMap">
     </script>
     <link rel="stylesheet" href="{{asset('css/map.css')}}">
 
 @endsection
 @section('content')
 
-    <h1 class="text-center">Here you can search a store in your area</h1>
+    <h1 class="text-center text-white">Here you can search a store in your area</h1>
 
     <div id="map"></div>
 
