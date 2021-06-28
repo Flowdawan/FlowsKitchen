@@ -1940,7 +1940,9 @@ __webpack_require__.r(__webpack_exports__);
     getAllIngredients: function getAllIngredients() {
       var _this = this;
 
-      fetch('https://www.themealdb.com/api/json/v2/9973533/list.php?i=list').then(function (response) {
+      fetch('https://www.themealdb.com/api/json/v2/9973533/list.php?i=list', {
+        method: 'get'
+      }).then(function (response) {
         return response.json();
       }).then(function (json) {
         _this.ingredients = json.meals.map(function (a) {
@@ -1978,8 +1980,6 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
-//
-//
 //
 //
 //
@@ -2185,7 +2185,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     },
     createModal: function createModal(id) {
       var modal = document.getElementById(id + "modal");
-      var div = document.getElementById(id);
+      var div = document.getElementById(id + "thumbnail");
       var closeSpn = document.getElementById(id + "closeSpn");
       var closeBtn = document.getElementById(id + "closeBtn");
 
@@ -2206,6 +2206,13 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           modal.style.display = "none";
         }
       };
+    },
+    bookmark: function bookmark() {
+      axios.post("/recipes").then(function () {
+        return event.currentTarget.id;
+      })["catch"](function (error) {
+        return handleError(error);
+      });
     }
   },
   watch: {
@@ -39499,7 +39506,7 @@ var render = function() {
               "height: 220px;  list-inline-item bg-secondary text-white rounded-lg m-2"
           },
           [
-            _c("div", { attrs: { id: meal.idMeal } }, [
+            _c("div", { attrs: { id: meal.idMeal + "thumbnail" } }, [
               _c("img", {
                 staticClass: "thumbnail",
                 attrs: { src: meal.strMealThumb }
@@ -39590,7 +39597,7 @@ var render = function() {
                           "button",
                           {
                             staticClass: "btn btn-primary",
-                            attrs: { type: "button" }
+                            attrs: { type: "button", id: meal.idMeal }
                           },
                           [_vm._v("Add to MyRecipes")]
                         ),
@@ -39603,7 +39610,8 @@ var render = function() {
                               type: "button",
                               id: meal.idMeal + "closeBtn",
                               "data-dismiss": "modal"
-                            }
+                            },
+                            on: { click: _vm.bookmark }
                           },
                           [_vm._v("Close")]
                         )

@@ -1,11 +1,10 @@
 <template>
     <ul class="list-inline">
         <li class="height: 220px;  list-inline-item bg-secondary text-white rounded-lg m-2" v-for="meal in meals">
-            <div :id="meal.idMeal">
+            <div :id="meal.idMeal + 'thumbnail'">
                 <img :src="meal.strMealThumb" class="thumbnail">
                 <p class="mealTitle">{{meal.strMeal}}</p>
             </div>
-
             <div class="modal text-dark" :id="meal.idMeal + 'modal'" tabindex="-1" role="dialog">
                 <div class="modal-dialog-scrollable modal-lg" role="document">
                     <div class="modal-content">
@@ -28,13 +27,12 @@
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-primary">Add to MyRecipes</button>
-                            <button type="button" :id="meal.idMeal + 'closeBtn'" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary" :id="meal.idMeal">Add to MyRecipes</button>
+                            <button type="button" v-on:click="bookmark" :id="meal.idMeal + 'closeBtn'" class="btn btn-secondary" data-dismiss="modal">Close</button>
                         </div>
                     </div>
                 </div>
             </div>
-
         </li>
         <div id='meals' class="invisible">
             {{url}}
@@ -58,7 +56,8 @@ export default {
         }
     },
 
-    methods: {async fetchURL(mealsOrMeal){
+    methods: {
+        async fetchURL(mealsOrMeal){
             if(mealsOrMeal == "meals") {
                 const response = await fetch(this.url);
                 const json = await response.json();
@@ -111,7 +110,7 @@ export default {
 
         createModal(id) {
             let modal = document.getElementById(id + "modal");
-            let div = document.getElementById(id);
+            let div = document.getElementById(id + "thumbnail");
             let closeSpn = document.getElementById(id + "closeSpn");
             let closeBtn = document.getElementById(id + "closeBtn");
             div.onclick = function() {
@@ -128,7 +127,10 @@ export default {
                     modal.style.display = "none";
                 }
             }
+        },
 
+        bookmark(){
+            axios.post("/recipes").then(() => event.currentTarget.id).catch(error => handleError(error));
         }
     },
 

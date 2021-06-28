@@ -50,7 +50,8 @@ export default {
         },
 
         getAllIngredients: function () {
-            fetch('https://www.themealdb.com/api/json/v2/9973533/list.php?i=list')
+            fetch('https://www.themealdb.com/api/json/v2/9973533/list.php?i=list', {
+                method: 'get'})
                 .then(response => response.json())
                 .then(json => {
                     this.ingredients = json.meals.map(a => a.strIngredient);
