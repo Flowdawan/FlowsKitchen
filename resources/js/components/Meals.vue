@@ -27,8 +27,8 @@
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-primary" :id="meal.idMeal">Add to MyRecipes</button>
-                            <button type="button" v-on:click="bookmark" :id="meal.idMeal + 'closeBtn'" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary" :id="meal.idMeal" v-on:click="bookmark">Add to MyRecipes</button>
+                            <button type="button" :id="meal.idMeal + 'closeBtn'" class="btn btn-secondary" data-dismiss="modal">Close</button>
                         </div>
                     </div>
                 </div>
@@ -53,6 +53,7 @@ export default {
             meal: null,
             meals: [],
             url_meal: null,
+            bookmarkedMealId: null,
         }
     },
 
@@ -127,16 +128,21 @@ export default {
                     modal.style.display = "none";
                 }
             }
+
         },
 
         bookmark(){
-            axios.post("/recipes").then(() => event.currentTarget.id).catch(error => handleError(error));
+            console.log("TESTBOOKMARK ID: " + event.currentTarget.id);
+            this.bookmarkedMealId = event.currentTarget.id;
         }
     },
 
     watch: {
         url: function () {
             this.showMeals();
+        },
+        bookmarkedMealId: function(val) {
+            this.$root.mealId = val;
         }
     }
 }

@@ -2031,7 +2031,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     return {
       meal: null,
       meals: [],
-      url_meal: null
+      url_meal: null,
+      bookmarkedMealId: null
     };
   },
   methods: {
@@ -2208,16 +2209,16 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       };
     },
     bookmark: function bookmark() {
-      axios.post("/recipes").then(function () {
-        return event.currentTarget.id;
-      })["catch"](function (error) {
-        return handleError(error);
-      });
+      console.log("TESTBOOKMARK ID: " + event.currentTarget.id);
+      this.bookmarkedMealId = event.currentTarget.id;
     }
   },
   watch: {
     url: function url() {
       this.showMeals();
+    },
+    bookmarkedMealId: function bookmarkedMealId(val) {
+      this.$root.mealId = val;
     }
   }
 });
@@ -2271,7 +2272,12 @@ vue__WEBPACK_IMPORTED_MODULE_0__.default.component('ingredients', __webpack_requ
  */
 
 var app = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
-  el: '#app'
+  el: '#app',
+  data: function data() {
+    return {
+      mealId: ''
+    };
+  }
 });
 
 /***/ }),
@@ -39597,7 +39603,8 @@ var render = function() {
                           "button",
                           {
                             staticClass: "btn btn-primary",
-                            attrs: { type: "button", id: meal.idMeal }
+                            attrs: { type: "button", id: meal.idMeal },
+                            on: { click: _vm.bookmark }
                           },
                           [_vm._v("Add to MyRecipes")]
                         ),
@@ -39610,8 +39617,7 @@ var render = function() {
                               type: "button",
                               id: meal.idMeal + "closeBtn",
                               "data-dismiss": "modal"
-                            },
-                            on: { click: _vm.bookmark }
+                            }
                           },
                           [_vm._v("Close")]
                         )

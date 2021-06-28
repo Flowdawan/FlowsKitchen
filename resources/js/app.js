@@ -42,5 +42,10 @@ Vue.component('ingredients',require('./components/Ingredients.vue').default);
 
 const app = new Vue({
     el: '#app',
+    data () {
+        return {
+            mealId: ''
+        }
+    }
 });
 
