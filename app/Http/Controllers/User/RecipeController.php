@@ -8,9 +8,15 @@ use Illuminate\Http\Request;
 
 class RecipeController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function show()
     {
-        $recipes = Recipes::get();
+        $recipes = Recipes::where('user_id', auth()->user()->id)->get();
         return view('content.recipes', [
             'recipes' => $recipes
         ]);
