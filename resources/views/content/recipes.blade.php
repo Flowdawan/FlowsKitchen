@@ -13,6 +13,5 @@
             </div>
         @endforeach
     @else
-        <p class="text-center text-white">There are no saved recipes</p>
     @endif
 @endsection

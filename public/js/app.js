@@ -2378,7 +2378,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 _this2.$forceUpdate();
 
                 if (!(_this2.meals.length > 0)) {
-                  _context3.next = 14;
+                  _context3.next = 15;
                   break;
                 }
 
@@ -2386,13 +2386,14 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 return _this2.showMeals();
 
               case 12:
-                _context3.next = 15;
+                document.getElementById("noRecipes").style.display = "none";
+                _context3.next = 16;
                 break;
 
-              case 14:
+              case 15:
                 document.getElementById("noRecipes").style.display = "block";
 
-              case 15:
+              case 16:
               case "end":
                 return _context3.stop();
             }
@@ -2581,19 +2582,7 @@ vue__WEBPACK_IMPORTED_MODULE_0__.default.component('recipes', __webpack_require_
  */
 
 var app = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
-  el: '#app',
-  data: {
-    recipes: []
-  },
-  created: function created() {
-    var _this = this;
-
-    // Make an ajax request to our server - /skills
-    // axios
-    axios.get('recipes/api').then(function (response) {
-      return _this.recipes = response.data;
-    });
-  }
+  el: '#app'
 });
 
 /***/ }),

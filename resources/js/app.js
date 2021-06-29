@@ -46,21 +46,5 @@ Vue.component('recipes',require('./components/Recipes.vue').default);
  */
 const app = new Vue({
     el: '#app',
-
-    data: {
-
-      recipes: []
-
-    },
-
-    created() {
-
-        // Make an ajax request to our server - /skills
-
-        // axios
-        axios.get('recipes/api').then(response => this.recipes = response.data)
-
-    }
-
 });
 

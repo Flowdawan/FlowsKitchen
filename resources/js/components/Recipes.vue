@@ -76,6 +76,7 @@ export default {
             this.$forceUpdate();
             if(this.meals.length > 0){
                 await this.showMeals();
+                document.getElementById("noRecipes").style.display = "none";
             } else {
                 document.getElementById("noRecipes").style.display = "block";
             }
