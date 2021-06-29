@@ -235,19 +235,30 @@ li {
 @media screen and (max-width: 800px) {
     .modal {
         position: fixed;
-        margin-left: 50px;
-        width: 400px;
-        height: 500px;
+        margin-top: 15%;
+        margin-left: 10%;
+        width: 300px;
+        height: 60%;
+        padding: 10px;
     }
+
     #youtube {
         position: relative;
-        width: 155px;
-        height: 155px;
+        margin-left: 10%;
+        width: 180px;
+        height: 100px;
     }
-    .loader{
-        position:fixed;
-        top:25%;
-        left:30%;
+
+    #modalImg {
+        position: relative;
+        margin-left: 10%;
+        width: 180px;
+        height: 100px;
+    }
+    .loader {
+        position: fixed;
+        top: 25%;
+        left: 30%;
         width: 150px;
         height: 150px;
     }
