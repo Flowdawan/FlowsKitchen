@@ -1,5 +1,6 @@
 <template>
     <ul class="list-inline">
+        <p class="display: none; text-center text-white" id="noRecipes">There are no saved recipes</p>
         <li class="height: 220px;  list-inline-item bg-secondary text-white rounded-lg m-2" v-for="meal in meals">
             <div :id="meal.idMeal + 'thumbnail'">
                 <img :src="meal.strMealThumb" class="thumbnail">
@@ -75,6 +76,8 @@ export default {
             this.$forceUpdate();
             if(this.meals.length > 0){
                 await this.showMeals();
+            } else {
+                document.getElementById("noRecipes").style.display = "block";
             }
 
         },
@@ -85,7 +88,7 @@ export default {
                 await this.showMeal(i);
                 this.createModal(this.meals[i].idMeal);
             }
-
+            document.getElementById("loadingWheel").style.display = "none";
         },
 
         showMeal(index){
@@ -112,12 +115,13 @@ export default {
 
         createModal(id) {
             this.$forceUpdate();
+
             let modal = document.getElementById(id + "modal");
             let div = document.getElementById(id + "thumbnail");
             let closeSpn = document.getElementById(id + "closeSpn");
             let closeBtn = document.getElementById(id + "closeBtn");
+            let removeBtn = document.getElementById(id);
 
-            document.getElementById("loadingWheel").style.display = "none";
             div.onclick = function() {
                 modal.style.display = "block";
             }
@@ -127,17 +131,22 @@ export default {
             closeBtn.onclick = function() {
                 modal.style.display = "none";
             }
+            removeBtn.onclick = function () {
+                modal.style.display = "none";
+            }
         },
 
-        deleteRecipe(){
-            axios.delete("/recipes", {
+        async deleteRecipe(){
+            await axios.delete("/recipes", {
                 data: {
                     recipeId: event.currentTarget.id,
                 }
             });
+
+            this.meals.splice(0,this.meals.length);
+            this.recipes.splice(0,this.recipes.length);
+            await this.getRecipesFromUser();
         },
-
-
     },
 
     created() {

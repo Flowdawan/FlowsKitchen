@@ -2291,6 +2291,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "Recipes",
   data: function data() {
@@ -2377,7 +2378,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 _this2.$forceUpdate();
 
                 if (!(_this2.meals.length > 0)) {
-                  _context3.next = 12;
+                  _context3.next = 14;
                   break;
                 }
 
@@ -2385,6 +2386,13 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 return _this2.showMeals();
 
               case 12:
+                _context3.next = 15;
+                break;
+
+              case 14:
+                document.getElementById("noRecipes").style.display = "block";
+
+              case 15:
               case "end":
                 return _context3.stop();
             }
@@ -2422,6 +2430,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 break;
 
               case 9:
+                document.getElementById("loadingWheel").style.display = "none";
+
+              case 10:
               case "end":
                 return _context4.stop();
             }
@@ -2456,7 +2467,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       var div = document.getElementById(id + "thumbnail");
       var closeSpn = document.getElementById(id + "closeSpn");
       var closeBtn = document.getElementById(id + "closeBtn");
-      document.getElementById("loadingWheel").style.display = "none";
+      var removeBtn = document.getElementById(id);
 
       div.onclick = function () {
         modal.style.display = "block";
@@ -2469,13 +2480,41 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       closeBtn.onclick = function () {
         modal.style.display = "none";
       };
+
+      removeBtn.onclick = function () {
+        modal.style.display = "none";
+      };
     },
     deleteRecipe: function deleteRecipe() {
-      axios["delete"]("/recipes", {
-        data: {
-          recipeId: event.currentTarget.id
-        }
-      });
+      var _this4 = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee4() {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee4$(_context5) {
+          while (1) {
+            switch (_context5.prev = _context5.next) {
+              case 0:
+                _context5.next = 2;
+                return axios["delete"]("/recipes", {
+                  data: {
+                    recipeId: event.currentTarget.id
+                  }
+                });
+
+              case 2:
+                _this4.meals.splice(0, _this4.meals.length);
+
+                _this4.recipes.splice(0, _this4.recipes.length);
+
+                _context5.next = 6;
+                return _this4.getRecipesFromUser();
+
+              case 6:
+              case "end":
+                return _context5.stop();
+            }
+          }
+        }, _callee4);
+      }))();
     }
   },
   created: function created() {
@@ -7204,7 +7243,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.autocomplete[data-v-962edab2] {\r\n    /*the container must be positioned relative:*/\r\n    position: relative;\r\n    display: inline-block;\n}\n.autocomplete-items[data-v-962edab2] {\r\n    position: absolute;\r\n    border: 1px solid #d4d4d4;\r\n    border-bottom: none;\r\n    border-top: none;\r\n    z-index: 99;\r\n    /*position the autocomplete items to be the same width as the container:*/\r\n    top: 100%;\r\n    left: 0;\r\n    right: 0;\n}\n.autocomplete-items div[data-v-962edab2] {\r\n    padding: 10px;\r\n    cursor: pointer;\r\n    background-color: #fff;\r\n    border-bottom: 1px solid #d4d4d4;\n}\n.autocomplete-items div[data-v-962edab2]:hover {\r\n    /*when hovering an item:*/\r\n    background-color: #e9e9e9;\n}\n.autocomplete-active[data-v-962edab2] {\r\n    /*when navigating through the items using the arrow keys:*/\r\n    background-color: DodgerBlue !important;\r\n    color: #ffffff;\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.autocomplete[data-v-962edab2] {\n    /*the container must be positioned relative:*/\n    position: relative;\n    display: inline-block;\n}\n.autocomplete-items[data-v-962edab2] {\n    position: absolute;\n    border: 1px solid #d4d4d4;\n    border-bottom: none;\n    border-top: none;\n    z-index: 99;\n    /*position the autocomplete items to be the same width as the container:*/\n    top: 100%;\n    left: 0;\n    right: 0;\n}\n.autocomplete-items div[data-v-962edab2] {\n    padding: 10px;\n    cursor: pointer;\n    background-color: #fff;\n    border-bottom: 1px solid #d4d4d4;\n}\n.autocomplete-items div[data-v-962edab2]:hover {\n    /*when hovering an item:*/\n    background-color: #e9e9e9;\n}\n.autocomplete-active[data-v-962edab2] {\n    /*when navigating through the items using the arrow keys:*/\n    background-color: DodgerBlue !important;\n    color: #ffffff;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -7228,7 +7267,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\nul[data-v-8d565496] {\r\n    margin: 15px 15%;\n}\nli[data-v-8d565496] {\r\n    width: 18%;\r\n    position: relative;\r\n    border-color: white 1px;\n}\np.mealTitle[data-v-8d565496] {\r\n    width: 100%;\r\n    position: absolute;\r\n    bottom: 0;\r\n    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;\r\n    font-family: sans-serif; color: white;\r\n    font-size: 26px;\n}\nimg.thumbnail[data-v-8d565496] {\r\n    width: 100%;\r\n    height: 140px;\n}\n.modal[data-v-8d565496] {\r\n    margin-left: 25%;\r\n    margin-right: 25%;\n}\n#modalImg[data-v-8d565496] {\r\n    max-width: 50%;\r\n    height: auto;\n}\n.loader[data-v-8d565496] {\r\n    border: 16px solid #f3f3f3;\r\n    border-radius: 50%;\r\n    border-top: 16px solid #3498db;\r\n    width: 360px;\r\n    height: 360px;\r\n    -webkit-animation: spin-data-v-8d565496 2s linear infinite; /* Safari */\r\n    animation: spin-data-v-8d565496 2s linear infinite;\r\n\r\n    position:fixed;\r\n    top:25%;\r\n    left:40%;\r\n    transform:translate(-50%, -50%);\r\n    z-index: 1000;\r\n\r\n    display: none;\n}\r\n\r\n/* Safari */\n@-webkit-keyframes spin-data-v-8d565496 {\n0% { -webkit-transform: rotate(0deg);\n}\n100% { -webkit-transform: rotate(360deg);\n}\n}\n@keyframes spin-data-v-8d565496 {\n0% { transform: rotate(0deg);\n}\n100% { transform: rotate(360deg);\n}\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\nul[data-v-8d565496] {\n    margin: 15px 15%;\n}\nli[data-v-8d565496] {\n    width: 18%;\n    position: relative;\n    border-color: white 1px;\n}\np.mealTitle[data-v-8d565496] {\n    width: 100%;\n    position: absolute;\n    bottom: 0;\n    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;\n    font-family: sans-serif; color: white;\n    font-size: 26px;\n}\nimg.thumbnail[data-v-8d565496] {\n    width: 100%;\n    height: 140px;\n}\n.modal[data-v-8d565496] {\n    margin-left: 25%;\n    margin-right: 25%;\n}\n#modalImg[data-v-8d565496] {\n    max-width: 50%;\n    height: auto;\n}\n.loader[data-v-8d565496] {\n    border: 16px solid #f3f3f3;\n    border-radius: 50%;\n    border-top: 16px solid #3498db;\n    width: 360px;\n    height: 360px;\n    -webkit-animation: spin-data-v-8d565496 2s linear infinite; /* Safari */\n    animation: spin-data-v-8d565496 2s linear infinite;\n\n    position:fixed;\n    top:25%;\n    left:40%;\n    transform:translate(-50%, -50%);\n    z-index: 1000;\n\n    display: none;\n}\n\n/* Safari */\n@-webkit-keyframes spin-data-v-8d565496 {\n0% { -webkit-transform: rotate(0deg);\n}\n100% { -webkit-transform: rotate(360deg);\n}\n}\n@keyframes spin-data-v-8d565496 {\n0% { transform: rotate(0deg);\n}\n100% { transform: rotate(360deg);\n}\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -39821,7 +39860,7 @@ var render = function() {
             "div",
             { staticClass: "bg-white p-3 rounded-lg col-md-4 text-center" },
             [
-              _c("p", [_vm._v("Zutaten:")]),
+              _c("p", [_vm._v("Ingredient:")]),
               _vm._v(" "),
               _c(
                 "div",
@@ -40085,6 +40124,15 @@ var render = function() {
     "ul",
     { staticClass: "list-inline" },
     [
+      _c(
+        "p",
+        {
+          staticClass: "display: none; text-center text-white",
+          attrs: { id: "noRecipes" }
+        },
+        [_vm._v("There are no saved recipes")]
+      ),
+      _vm._v(" "),
       _vm._l(_vm.meals, function(meal) {
         return _c(
           "li",

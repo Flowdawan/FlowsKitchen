@@ -2,7 +2,7 @@
     <form autocomplete="off" id="searchMealsForm" @submit.prevent="searchMeals">
         <div class="justify-content-lg-center row row-cols-sm-2">
             <div class="bg-white p-3 rounded-lg col-md-4 text-center">
-                <p>Zutaten:</p>
+                <p>Ingredient:</p>
                 <div class="autocomplete" style="width:300px;">
                     <input style="width:300px;" id="myInput" type="myInput" placeholder="Ingredient"
                            name="ingredient" v-model="ingredient"><br>
