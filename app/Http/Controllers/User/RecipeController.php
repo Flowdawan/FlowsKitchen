@@ -41,7 +41,10 @@ class RecipeController extends Controller
         ]);
 
         //$request->user()->recipes()->create($request->only('recipeId' => $request->recipeId));
-        //dd('Wir haben einen Post');
         //return back();
+    }
+
+    public function api(){
+        return response(Recipes::where('user_id', auth()->user()->id)->get());
     }
 }

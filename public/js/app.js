@@ -2216,16 +2216,16 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       };
     },
     bookmark: function bookmark() {
-      console.log("TESTBOOKMARK ID: " + event.currentTarget.id);
+      axios.post('/recipes', {
+        recipeId: event.currentTarget.id
+      }); //console.log("TESTBOOKMARK ID: " + event.currentTarget.id);
+
       this.bookmarkedMealId = event.currentTarget.id;
     }
   },
   watch: {
     url: function url() {
       this.showMeals();
-    },
-    bookmarkedMealId: function bookmarkedMealId(val) {
-      this.$root.mealId = val;
     }
   }
 });
@@ -6953,7 +6953,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\nul[data-v-8d565496] {\r\n    margin: 15px 15%;\n}\nli[data-v-8d565496] {\r\n    width: 18%;\r\n    position: relative;\r\n    border-color: white 1px;\n}\np.mealTitle[data-v-8d565496] {\r\n    width: 100%;\r\n    position: absolute;\r\n    bottom: 0;\r\n    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;\r\n    font-family: sans-serif; color: white;\r\n    font-size: 26px;\n}\nimg.thumbnail[data-v-8d565496] {\r\n    width: 100%;\r\n    height: 140px;\n}\n.modal[data-v-8d565496] {\r\n    margin-left: 25%;\r\n    margin-right: 25%;\n}\n#modalImg[data-v-8d565496] {\r\n    max-width: 50%;\r\n    height: auto;\n}\n.loader[data-v-8d565496] {\r\n    border: 16px solid #f3f3f3;\r\n    border-radius: 50%;\r\n    border-top: 16px solid #3498db;\r\n    width: 360px;\r\n    height: 360px;\r\n    -webkit-animation: spin-data-v-8d565496 2s linear infinite; /* Safari */\r\n    animation: spin-data-v-8d565496 2s linear infinite;\r\n\r\n    position:fixed;\r\n    top:25%;\r\n    left:40%;\r\n    transform:translate(-50%, -50%);\r\n    z-index: 1000;\r\n\r\n    display: none;\n}\r\n\r\n/* Safari */\n@-webkit-keyframes spin-data-v-8d565496 {\n0% { -webkit-transform: rotate(0deg);\n}\n100% { -webkit-transform: rotate(360deg);\n}\n}\n@keyframes spin-data-v-8d565496 {\n0% { transform: rotate(0deg);\n}\n100% { transform: rotate(360deg);\n}\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\nul[data-v-8d565496] {\n    margin: 15px 15%;\n}\nli[data-v-8d565496] {\n    width: 18%;\n    position: relative;\n    border-color: white 1px;\n}\np.mealTitle[data-v-8d565496] {\n    width: 100%;\n    position: absolute;\n    bottom: 0;\n    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;\n    font-family: sans-serif; color: white;\n    font-size: 26px;\n}\nimg.thumbnail[data-v-8d565496] {\n    width: 100%;\n    height: 140px;\n}\n.modal[data-v-8d565496] {\n    margin-left: 25%;\n    margin-right: 25%;\n}\n#modalImg[data-v-8d565496] {\n    max-width: 50%;\n    height: auto;\n}\n.loader[data-v-8d565496] {\n    border: 16px solid #f3f3f3;\n    border-radius: 50%;\n    border-top: 16px solid #3498db;\n    width: 360px;\n    height: 360px;\n    -webkit-animation: spin-data-v-8d565496 2s linear infinite; /* Safari */\n    animation: spin-data-v-8d565496 2s linear infinite;\n\n    position:fixed;\n    top:25%;\n    left:40%;\n    transform:translate(-50%, -50%);\n    z-index: 1000;\n\n    display: none;\n}\n\n/* Safari */\n@-webkit-keyframes spin-data-v-8d565496 {\n0% { -webkit-transform: rotate(0deg);\n}\n100% { -webkit-transform: rotate(360deg);\n}\n}\n@keyframes spin-data-v-8d565496 {\n0% { transform: rotate(0deg);\n}\n100% { transform: rotate(360deg);\n}\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

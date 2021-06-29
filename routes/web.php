@@ -46,6 +46,9 @@ Route::put('profile', [UserPageController::class, 'put']);
 //to show the saved recipes for an user
 Route::get('recipes', [RecipeController::class, 'show'])->name('recipes.show');
 
+Route::get('recipes/api', [RecipeController::class, 'api']);
+
+
 Route::post('recipes', [RecipeController::class, 'store']);
 
 
