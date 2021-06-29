@@ -18,10 +18,10 @@
                         <div class="modal-body">
                             <div class="container-fluid" id="modalContent">
                                 <div id="picturesModal">
-                                <img :src="meal.strMealThumb" class="img-fluid float-left" id="modalImg">
-                                <iframe id="youtube" width="350" height="360"
-                                        :src="meal.strYoutube">
-                                </iframe>
+                                    <img :src="meal.strMealThumb" class="img-fluid float-left" id="modalImg">
+                                    <iframe id="youtube"
+                                            :src="meal.strYoutube">
+                                    </iframe>
                                 </div>
                                 <div class="text-center" id="textModal">
                                     <div v-html="meal.strIngredients" class="font-italic"></div>
@@ -204,15 +204,31 @@ li {
     border-color: white 1px;
 }
 
+#picturesModal {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+#modalImg {
+    width: 50%;
+    height: auto;
+}
+
+#youtube{
+    height: 100%;
+    width: 50%;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
 .modal {
     margin-left: 25%;
     margin-right: 25%;
 }
 
-#modalImg {
-    max-width: 50%;
-    height: auto;
-}
 
 .loader {
     border: 16px solid #f3f3f3;
@@ -232,29 +248,15 @@ li {
     display: none;
 }
 
+@media screen and (max-width: 1100px) {
+    .modal{
+        margin-left: 2%;
+    }
+}
+
+
 @media screen and (max-width: 800px) {
-    .modal {
-        position: fixed;
-        margin-top: 15%;
-        margin-left: 10%;
-        width: 300px;
-        height: 60%;
-        padding: 10px;
-    }
 
-    #youtube {
-        position: relative;
-        margin-left: 10%;
-        width: 180px;
-        height: 100px;
-    }
-
-    #modalImg {
-        position: relative;
-        margin-left: 10%;
-        width: 180px;
-        height: 100px;
-    }
     .loader {
         position: fixed;
         top: 25%;
@@ -263,14 +265,13 @@ li {
         height: 150px;
     }
 
-    .mealTitle{
-        width: 260px;
-    }
-
     li {
         width: auto;
     }
 
+    .mealTitle{
+        width: 260px;
+    }
 }
 
 /* Safari */

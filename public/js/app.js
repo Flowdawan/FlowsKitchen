@@ -2028,6 +2028,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "Meals",
   props: ['url'],
@@ -7239,7 +7241,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.autocomplete[data-v-962edab2] {\r\n    /*the container must be positioned relative:*/\r\n    position: relative;\r\n    display: inline-block;\n}\n.autocomplete-items[data-v-962edab2] {\r\n    position: absolute;\r\n    border: 1px solid #d4d4d4;\r\n    border-bottom: none;\r\n    border-top: none;\r\n    z-index: 99;\r\n    /*position the autocomplete items to be the same width as the container:*/\r\n    top: 100%;\r\n    left: 0;\r\n    right: 0;\n}\n.autocomplete-items div[data-v-962edab2] {\r\n    padding: 10px;\r\n    cursor: pointer;\r\n    background-color: #fff;\r\n    border-bottom: 1px solid #d4d4d4;\n}\n.autocomplete-items div[data-v-962edab2]:hover {\r\n    /*when hovering an item:*/\r\n    background-color: #e9e9e9;\n}\n.autocomplete-active[data-v-962edab2] {\r\n    /*when navigating through the items using the arrow keys:*/\r\n    background-color: DodgerBlue !important;\r\n    color: #ffffff;\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.autocomplete[data-v-962edab2] {\n    /*the container must be positioned relative:*/\n    position: relative;\n    display: inline-block;\n}\n.autocomplete-items[data-v-962edab2] {\n    position: absolute;\n    border: 1px solid #d4d4d4;\n    border-bottom: none;\n    border-top: none;\n    z-index: 99;\n    /*position the autocomplete items to be the same width as the container:*/\n    top: 100%;\n    left: 0;\n    right: 0;\n}\n.autocomplete-items div[data-v-962edab2] {\n    padding: 10px;\n    cursor: pointer;\n    background-color: #fff;\n    border-bottom: 1px solid #d4d4d4;\n}\n.autocomplete-items div[data-v-962edab2]:hover {\n    /*when hovering an item:*/\n    background-color: #e9e9e9;\n}\n.autocomplete-active[data-v-962edab2] {\n    /*when navigating through the items using the arrow keys:*/\n    background-color: DodgerBlue !important;\n    color: #ffffff;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -7263,7 +7265,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.thumbnail[data-v-8d565496] {\n    grid-column: 1 / 3;\n    grid-row: 1;\n\n    width: 100%;\n    height: auto;\n}\n.mealTitle[data-v-8d565496] {\n    grid-column: 1 / 3;\n    grid-row: 2;\n\n    margin-bottom: 4px;\n\n    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;\n    font-family: sans-serif;\n    color: white;\n    font-size: 18px;\n}\nul[data-v-8d565496] {\n    margin: 15px 15% 50px 15%;\n}\nli[data-v-8d565496] {\n    width: 18%;\n    position: relative;\n    border-color: white 1px;\n}\n.modal[data-v-8d565496] {\n    margin-left: 25%;\n    margin-right: 25%;\n}\n.loader[data-v-8d565496] {\n    border: 16px solid #f3f3f3;\n    border-radius: 50%;\n    border-top: 16px solid #3498db;\n    width: 360px;\n    height: 360px;\n    -webkit-animation: spin-data-v-8d565496 2s linear infinite; /* Safari */\n    animation: spin-data-v-8d565496 2s linear infinite;\n\n    position: fixed;\n    top: 25%;\n    left: 40%;\n    transform: translate(-50%, -50%);\n    z-index: 1000;\n\n    display: none;\n}\n@media screen and (max-width: 800px) {\n.modal[data-v-8d565496] {\n        position: fixed;\n        margin-top: 15%;\n        margin-left: 10%;\n        width: 300px;\n        height: 60%;\n        padding: 10px;\n}\n#youtube[data-v-8d565496] {\n        position: relative;\n        margin-left: 10%;\n        width: 180px;\n        height: 100px;\n}\n#modalImg[data-v-8d565496] {\n        position: relative;\n        margin-left: 10%;\n        width: 180px;\n        height: 100px;\n}\n.loader[data-v-8d565496] {\n        position: fixed;\n        top: 25%;\n        left: 30%;\n        width: 150px;\n        height: 150px;\n}\nli[data-v-8d565496] {\n        width: auto;\n}\n.mealTitle[data-v-8d565496]{\n        width: 260px;\n}\n}\n\n\n    /* Safari */\n@-webkit-keyframes spin-data-v-8d565496 {\n0% {\n            -webkit-transform: rotate(0deg);\n}\n100% {\n            -webkit-transform: rotate(360deg);\n}\n}\n@keyframes spin-data-v-8d565496 {\n0% {\n            transform: rotate(0deg);\n}\n100% {\n            transform: rotate(360deg);\n}\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.thumbnail[data-v-8d565496] {\n    grid-column: 1 / 3;\n    grid-row: 1;\n\n    width: 100%;\n    height: auto;\n}\n.mealTitle[data-v-8d565496] {\n    grid-column: 1 / 3;\n    grid-row: 2;\n\n    margin-bottom: 4px;\n\n    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;\n    font-family: sans-serif;\n    color: white;\n    font-size: 18px;\n}\nul[data-v-8d565496] {\n    margin: 15px 15% 50px 15%;\n}\nli[data-v-8d565496] {\n    width: 18%;\n    position: relative;\n    border-color: white 1px;\n}\n#picturesModal[data-v-8d565496] {\n    overflow: hidden;\n    position: relative;\n    width: 100%;\n    height: auto;\n}\n#modalImg[data-v-8d565496] {\n    width: 50%;\n    height: auto;\n}\n#youtube[data-v-8d565496]{\n    height: 100%;\n    width: 50%;\n    position: absolute;\n    right: 0;\n    top: 0;\n}\n.modal[data-v-8d565496] {\n    margin-left: 25%;\n    margin-right: 25%;\n}\n.loader[data-v-8d565496] {\n    border: 16px solid #f3f3f3;\n    border-radius: 50%;\n    border-top: 16px solid #3498db;\n    width: 360px;\n    height: 360px;\n    -webkit-animation: spin-data-v-8d565496 2s linear infinite; /* Safari */\n    animation: spin-data-v-8d565496 2s linear infinite;\n\n    position: fixed;\n    top: 25%;\n    left: 40%;\n    transform: translate(-50%, -50%);\n    z-index: 1000;\n\n    display: none;\n}\n@media screen and (max-width: 1100px) {\n.modal[data-v-8d565496]{\n        margin-left: 2%;\n}\n}\n@media screen and (max-width: 800px) {\n.loader[data-v-8d565496] {\n        position: fixed;\n        top: 25%;\n        left: 30%;\n        width: 150px;\n        height: 150px;\n}\nli[data-v-8d565496] {\n        width: auto;\n}\n.mealTitle[data-v-8d565496]{\n        width: 260px;\n}\n}\n\n\n    /* Safari */\n@-webkit-keyframes spin-data-v-8d565496 {\n0% {\n            -webkit-transform: rotate(0deg);\n}\n100% {\n            -webkit-transform: rotate(360deg);\n}\n}\n@keyframes spin-data-v-8d565496 {\n0% {\n            transform: rotate(0deg);\n}\n100% {\n            transform: rotate(360deg);\n}\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -7287,7 +7289,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n#picturesModal[data-v-4fb0ab8a] {\n}\n#textModal[data-v-4fb0ab8a] {\n}\n.thumbnail[data-v-4fb0ab8a] {\n    grid-column: 1 / 3;\n    grid-row: 1;\n\n    width: 100%;\n    height: auto;\n}\n.mealTitle[data-v-4fb0ab8a] {\n    grid-column: 1 / 3;\n    grid-row: 2;\n\n    margin-bottom: 4px;\n\n    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;\n    font-family: sans-serif; color: white;\n    font-size: 18px;\n}\nul[data-v-4fb0ab8a] {\n    margin: 15px 15% 50px 15%;\n}\nli[data-v-4fb0ab8a] {\n    width: 18%;\n    position: relative;\n    border-color: white 1px;\n}\n.modal[data-v-4fb0ab8a] {\n    margin-left: 25%;\n    margin-right: 25%;\n}\n#modalImg[data-v-4fb0ab8a] {\n    max-width: 50%;\n    height: auto;\n}\n.loader[data-v-4fb0ab8a] {\n    border: 16px solid #f3f3f3;\n    border-radius: 50%;\n    border-top: 16px solid #3498db;\n    width: 360px;\n    height: 360px;\n    -webkit-animation: spin-data-v-4fb0ab8a 2s linear infinite; /* Safari */\n    animation: spin-data-v-4fb0ab8a 2s linear infinite;\n\n    position:fixed;\n    top:25%;\n    left:40%;\n    transform:translate(-50%, -50%);\n    z-index: 1000;\n\n    display: none;\n}\n@media screen and (max-width: 800px) {\n.modal[data-v-4fb0ab8a] {\n        position: fixed;\n        margin-top: 15%;\n        margin-left: 10%;\n        width: 300px;\n        height: 60%;\n        padding: 10px;\n}\n#youtube[data-v-4fb0ab8a] {\n        position: relative;\n        margin-left: 10%;\n        width: 180px;\n        height: 100px;\n}\n#modalImg[data-v-4fb0ab8a] {\n        position: relative;\n        margin-left: 10%;\n        width: 180px;\n        height: 100px;\n}\n.loader[data-v-4fb0ab8a] {\n        position: fixed;\n        top: 25%;\n        left: 30%;\n        width: 150px;\n        height: 150px;\n}\n.mealTitle[data-v-4fb0ab8a]{\n        width: 260px;\n}\nli[data-v-4fb0ab8a] {\n        width: auto;\n}\n}\n\n/* Safari */\n@-webkit-keyframes spin-data-v-4fb0ab8a {\n0% { -webkit-transform: rotate(0deg);\n}\n100% { -webkit-transform: rotate(360deg);\n}\n}\n@keyframes spin-data-v-4fb0ab8a {\n0% { transform: rotate(0deg);\n}\n100% { transform: rotate(360deg);\n}\n}\n@media screen and (max-width: 780px) {\nli[data-v-4fb0ab8a] {\n        width: auto;\n}\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n#picturesModal[data-v-4fb0ab8a] {\n}\n#textModal[data-v-4fb0ab8a] {\n}\n.thumbnail[data-v-4fb0ab8a] {\n    grid-column: 1 / 3;\n    grid-row: 1;\n\n    width: 100%;\n    height: auto;\n}\n.mealTitle[data-v-4fb0ab8a] {\n    grid-column: 1 / 3;\n    grid-row: 2;\n\n    margin-bottom: 4px;\n\n    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;\n    font-family: sans-serif; color: white;\n    font-size: 18px;\n}\nul[data-v-4fb0ab8a] {\n    margin: 15px 15% 50px 15%;\n}\nli[data-v-4fb0ab8a] {\n    width: 18%;\n    position: relative;\n    border-color: white 1px;\n}\n#picturesModal[data-v-4fb0ab8a] {\n    overflow: hidden;\n    position: relative;\n    width: 100%;\n    height: auto;\n}\n#modalImg[data-v-4fb0ab8a] {\n    width: 50%;\n    height: auto;\n}\n#youtube[data-v-4fb0ab8a]{\n    height: 100%;\n    width: 50%;\n    position: absolute;\n    right: 0;\n    top: 0;\n}\n.modal[data-v-4fb0ab8a] {\n    margin-left: 25%;\n    margin-right: 25%;\n}\n.loader[data-v-4fb0ab8a] {\n    border: 16px solid #f3f3f3;\n    border-radius: 50%;\n    border-top: 16px solid #3498db;\n    width: 360px;\n    height: 360px;\n    -webkit-animation: spin-data-v-4fb0ab8a 2s linear infinite; /* Safari */\n    animation: spin-data-v-4fb0ab8a 2s linear infinite;\n\n    position:fixed;\n    top:25%;\n    left:40%;\n    transform:translate(-50%, -50%);\n    z-index: 1000;\n\n    display: none;\n}\n@media screen and (max-width: 1100px) {\n.modal[data-v-4fb0ab8a]{\n        margin-left: 2%;\n}\n}\n@media screen and (max-width: 800px) {\n.loader[data-v-4fb0ab8a] {\n        position: fixed;\n        top: 25%;\n        left: 30%;\n        width: 150px;\n        height: 150px;\n}\nli[data-v-4fb0ab8a] {\n        width: auto;\n}\n.mealTitle[data-v-4fb0ab8a]{\n        width: 260px;\n}\n}\n\n/* Safari */\n@-webkit-keyframes spin-data-v-4fb0ab8a {\n0% { -webkit-transform: rotate(0deg);\n}\n100% { -webkit-transform: rotate(360deg);\n}\n}\n@keyframes spin-data-v-4fb0ab8a {\n0% { transform: rotate(0deg);\n}\n100% { transform: rotate(360deg);\n}\n}\n@media screen and (max-width: 780px) {\nli[data-v-4fb0ab8a] {\n        width: auto;\n}\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -40028,34 +40030,38 @@ var render = function() {
                       _vm._v(" "),
                       _c("div", { staticClass: "modal-body" }, [
                         _c("div", { staticClass: "container-fluid" }, [
-                          _c("img", {
-                            staticClass: "img-fluid float-left",
-                            attrs: { src: meal.strMealThumb, id: "modalImg" }
-                          }),
-                          _vm._v(" "),
-                          _c("iframe", {
-                            attrs: {
-                              id: "youtube",
-                              width: "350",
-                              height: "360",
-                              src: meal.strYoutube
-                            }
-                          }),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "text-center" }, [
-                            _c("div", {
-                              staticClass: "font-italic",
-                              domProps: {
-                                innerHTML: _vm._s(meal.strIngredients)
-                              }
+                          _c("div", { attrs: { id: "picturesModal" } }, [
+                            _c("img", {
+                              staticClass: "img-fluid float-left",
+                              attrs: { src: meal.strMealThumb, id: "modalImg" }
                             }),
                             _vm._v(" "),
-                            _c("div", {
-                              domProps: {
-                                innerHTML: _vm._s(meal.strInstructions)
-                              }
+                            _c("iframe", {
+                              attrs: { id: "youtube", src: meal.strYoutube }
                             })
-                          ])
+                          ]),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            {
+                              staticClass: "text-center",
+                              attrs: { id: "textModal" }
+                            },
+                            [
+                              _c("div", {
+                                staticClass: "font-italic",
+                                domProps: {
+                                  innerHTML: _vm._s(meal.strIngredients)
+                                }
+                              }),
+                              _vm._v(" "),
+                              _c("div", {
+                                domProps: {
+                                  innerHTML: _vm._s(meal.strInstructions)
+                                }
+                              })
+                            ]
+                          )
                         ])
                       ]),
                       _vm._v(" "),
@@ -40228,12 +40234,7 @@ var render = function() {
                               }),
                               _vm._v(" "),
                               _c("iframe", {
-                                attrs: {
-                                  id: "youtube",
-                                  width: "350",
-                                  height: "360",
-                                  src: meal.strYoutube
-                                }
+                                attrs: { id: "youtube", src: meal.strYoutube }
                               })
                             ]),
                             _vm._v(" "),
