@@ -142,6 +142,7 @@ export default {
             axios.post('/recipes', {
                 recipeId: event.currentTarget.id
             });
+
             //console.log("TESTBOOKMARK ID: " + event.currentTarget.id);
             this.bookmarkedMealId = event.currentTarget.id;
         }

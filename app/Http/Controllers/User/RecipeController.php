@@ -45,6 +45,7 @@ class RecipeController extends Controller
     }
 
     public function api(){
+
         return response(Recipes::where('user_id', auth()->user()->id)->get());
     }
 }
