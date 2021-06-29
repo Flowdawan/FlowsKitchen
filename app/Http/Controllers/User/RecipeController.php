@@ -45,7 +45,7 @@ class RecipeController extends Controller
     }
 
     public function delete(Request $request){
-        Recipes::find($request->recipeId->delete());
+        Recipes::where('recipeId',$request->recipeId)->delete();
     }
 
     public function api(){

@@ -130,7 +130,7 @@ export default {
         },
 
         deleteRecipe(){
-            axios.delete("/recipe", {
+            axios.delete("/recipes", {
                 data: {
                     recipeId: event.currentTarget.id,
                 }
