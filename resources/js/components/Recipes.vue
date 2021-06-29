@@ -18,7 +18,7 @@
                         <div class="modal-body">
                             <div class="container-fluid">
                                 <img :src="meal.strMealThumb" class="img-fluid float-left" id="modalImg">
-                                <iframe width="350" height="360"
+                                <iframe id="youtube" width="350" height="360"
                                         :src="meal.strYoutube">
                                 </iframe>
                                 <div class="text-center">
@@ -198,6 +198,19 @@ img.thumbnail {
 #modalImg {
     max-width: 50%;
     height: auto;
+}
+
+@media screen and (max-width: 800px) {
+    .modal {
+        position: fixed;
+        width: 200px;
+        height: 500px;
+    }
+    #youtube {
+        position: relative;
+        width: 75px;
+        height: 100px;
+    }
 }
 
 .loader {
