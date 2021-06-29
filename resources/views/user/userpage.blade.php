@@ -69,6 +69,14 @@
                            value="">
                 </div>
             </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <p>You have still saved recipes</p>
+                </div>
+                <div class="col-md-6">
+                    <p id="recipe_count"></p>
+                </div>
+            </div>
             <div class="align-content-center text-center">
 
                 <button onclick="changeAccount()" class="btn-info text-black-50 m-2" id="edit_button" type="button">

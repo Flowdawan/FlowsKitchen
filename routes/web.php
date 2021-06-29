@@ -48,6 +48,7 @@ Route::get('recipes', [RecipeController::class, 'show'])->name('recipes.show');
 
 Route::get('recipes/api', [RecipeController::class, 'api']);
 
+Route::delete('recipes', [RecipeController::class, 'delete']);
 
 Route::post('recipes', [RecipeController::class, 'store']);
 
