@@ -238,6 +238,10 @@ li {
     li {
         width: auto;
     }
+
+    .mealTitle{
+        width: 260px;
+    }
 }
 
 /* Safari */

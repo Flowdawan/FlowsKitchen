@@ -16,12 +16,14 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            <div class="container-fluid">
+                            <div class="container-fluid" id="modalContent">
+                                <div id="picturesModal">
                                 <img :src="meal.strMealThumb" class="img-fluid float-left" id="modalImg">
                                 <iframe id="youtube" width="350" height="360"
                                         :src="meal.strYoutube">
                                 </iframe>
-                                <div class="text-center">
+                                </div>
+                                <div class="text-center" id="textModal">
                                     <div v-html="meal.strIngredients" class="font-italic"></div>
                                     <div v-html="meal.strInstructions"></div>
                                 </div>
@@ -165,6 +167,14 @@ export default {
 
 <style scoped>
 
+#picturesModal {
+
+}
+
+#textModal {
+
+}
+
 .thumbnail {
     grid-column: 1 / 3;
     grid-row: 1;
@@ -225,13 +235,14 @@ li {
 @media screen and (max-width: 800px) {
     .modal {
         position: fixed;
-        width: 200px;
+        margin-left: 50px;
+        width: 400px;
         height: 500px;
     }
     #youtube {
         position: relative;
-        width: 75px;
-        height: 100px;
+        width: 155px;
+        height: 155px;
     }
     .loader{
         position:fixed;
@@ -240,6 +251,15 @@ li {
         width: 150px;
         height: 150px;
     }
+
+    .mealTitle{
+        width: 260px;
+    }
+
+    li {
+        width: auto;
+    }
+
 }
 
 /* Safari */
