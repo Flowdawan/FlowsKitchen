@@ -33,6 +33,11 @@ Vue.component('meals',require('./components/Meals.vue').default);
  */
 Vue.component('ingredients',require('./components/Ingredients.vue').default);
 
+/**
+ * Recipes Component
+ */
+Vue.component('recipes',require('./components/Recipes.vue').default);
+
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -41,5 +46,21 @@ Vue.component('ingredients',require('./components/Ingredients.vue').default);
  */
 const app = new Vue({
     el: '#app',
+
+    data: {
+
+      recipes: []
+
+    },
+
+    created() {
+
+        // Make an ajax request to our server - /skills
+
+        // axios
+        axios.get('recipes/api').then(response => this.recipes = response.data)
+
+    }
+
 });
 

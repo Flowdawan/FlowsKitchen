@@ -27,101 +27,97 @@
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-primary" :id="meal.idMeal" v-on:click="bookmark">Add to MyRecipes</button>
+                            <button type="button" class="btn btn-primary" :id="meal.idMeal" v-on:click="deleteRecipe">Remove from MyRecipes</button>
                             <button type="button" :id="meal.idMeal + 'closeBtn'" class="btn btn-secondary" data-dismiss="modal">Close</button>
                         </div>
                     </div>
                 </div>
             </div>
         </li>
-        <div id='meals' class="invisible">
-            {{url}}
-        </div>
         <div class="loader" id="loadingWheel"></div>
     </ul>
-
 </template>
 
 <script>
 export default {
-    name: "Meals",
-
-    props: ['url'],
+    name: "Recipes",
 
     data() {
         return {
-            meal: null,
+            recipes: [],
             meals: [],
-            url_meal: null,
-            bookmarkedMealId: null,
+            delete: null,
         }
     },
 
+
     methods: {
-        async fetchURL(mealsOrMeal){
-            if(mealsOrMeal == "meals") {
-                const response = await fetch(this.url);
-                const json = await response.json();
-                this.meals = json.meals;
-            } else if(mealsOrMeal == "meal"){
-                const response = await fetch(this.url_meal);
-                const json = await response.json();
-                this.meal = null;
-                this.meal = json.meals[0];
+
+        async getRecipesFromUser(){
+            await axios.get('recipes/api').then(response => this.recipes = response.data);
+        },
+
+        async getMeals(){
+            console.log("RecipesLength: " + this.recipes.length);
+            for(let i = 0; i < this.recipes.length; i++) {
+                let urlMeal = "https://www.themealdb.com/api/json/v2/9973533/lookup.php?i=";
+                urlMeal += this.recipes[i].recipeId;
+                console.log("RecipesURL Nr " + i + " " + urlMeal);
+
+                await fetch(urlMeal, {
+                    method: 'get'})
+                    .then(response => response.json())
+                    .then(json => {
+                        this.meals[i] = json.meals[0]
+                    });
             }
+
+            this.$forceUpdate();
+            if(this.meals.length > 0){
+                await this.showMeals();
+            }
+
         },
 
         async showMeals(){
             document.getElementById("loadingWheel").style.display = "block";
-            await this.fetchURL("meals");
             for(let i = 0; i < this.meals.length; i++) {
-                await this.showMeal(this.meals[i].idMeal, i);
+                await this.showMeal(i);
                 this.createModal(this.meals[i].idMeal);
             }
-            await this.$forceUpdate();
-            document.getElementById("loadingWheel").style.display = "none";
+
         },
 
-        async showMeal(id,index){
-            this.url_meal = null;
-            this.url_meal = "https://www.themealdb.com/api/json/v2/9973533/lookup.php?i=" + id;
-            await this.fetchURL("meal");
-            let allIngredients = this.getAllIngredients();
-            this.meals[index]["strIngredients"] = allIngredients;
-            this.meals[index]["strYoutube"] = this.meal.strYoutube.replace("/watch?v=", "/embed/");
-            this.meals[index]["strInstructions"] = this.meal.strInstructions.replace(/\n/g,'<br>');
+        showMeal(index){
+            this.meals[index]["strIngredients"] = this.getAllIngredients(index);
+            this.meals[index].strYoutube = this.meals[index].strYoutube.replace("/watch?v=", "/embed/");
+            this.meals[index].strInstructions = this.meals[index].strInstructions.replace(/\n/g,'<br>');
         },
 
-        getAllIngredients() {
+        getAllIngredients(index) {
             let ingredients = "<p>";
             let num = 1;
-            while(this.meal[`strIngredient${num}`] != "" && this.meal[`strIngredient${num}`] != null )
+            while(this.meals[index][`strIngredient${num}`] != "" && this.meals[index][`strIngredient${num}`] != null )
             {
-                if(this.meal[`strMeasure${num}`] != "" && this.meal[`strMeasure${num}`] != null){
-                    ingredients += this.meal[`strMeasure${num}`] + " " + this.meal[`strIngredient${num}`] + "<br>";
+                if(this.meals[index][`strMeasure${num}`] != "" && this.meals[index][`strMeasure${num}`] != null){
+                    ingredients += this.meals[index][`strMeasure${num}`] + " " + this.meals[index][`strIngredient${num}`] + "<br>";
                     num++;
                 } else {
-                    ingredients += this.meal[`strIngredient${num}`] + "<br>";
+                    ingredients += this.meals[index][`strIngredient${num}`] + "<br>";
                     num++;
                 }
-
             }
             return ingredients + "</p>";
         },
 
         createModal(id) {
+            this.$forceUpdate();
             let modal = document.getElementById(id + "modal");
             let div = document.getElementById(id + "thumbnail");
             let closeSpn = document.getElementById(id + "closeSpn");
             let closeBtn = document.getElementById(id + "closeBtn");
-            let addBtn = document.getElementById(id);
 
-            if(window.auth_user != "notLoggedIn") {
-                addBtn.style.display = "block";
-                this.userId = window.auth_user.id;
-            } else {
-                addBtn.style.display = "none";
-            }
+            document.getElementById("loadingWheel").style.display = "none";
             div.onclick = function() {
                 modal.style.display = "block";
             }
@@ -131,29 +127,29 @@ export default {
             closeBtn.onclick = function() {
                 modal.style.display = "none";
             }
-            window.onclick = function(event) {
-                if (event.target == modal) {
-                    modal.style.display = "none";
-                }
-            }
         },
 
-        bookmark(){
-            axios.post('/recipes', {
-                recipeId: event.currentTarget.id
+        deleteRecipe(){
+            axios.delete("/recipe", {
+                data: {
+                    recipeId: event.currentTarget.id,
+                }
             });
-            //console.log("TESTBOOKMARK ID: " + event.currentTarget.id);
-            this.bookmarkedMealId = event.currentTarget.id;
+        },
 
 
-        }
+    },
+
+    created() {
+        this.getRecipesFromUser();
     },
 
     watch: {
-        url: function () {
-            this.showMeals();
+        recipes: function () {
+            this.getMeals();
         },
     }
+
 }
 </script>
 

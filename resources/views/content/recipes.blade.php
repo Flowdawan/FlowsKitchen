@@ -1,6 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
+    <div id="app">
+        <ul>
+            <li v-for="recipe in recipes" v-text="recipe.recipeId"></li>
+        </ul>
+        <recipes></recipes>
+    </div>
 
     <h1 class="text-center text-white">Here you can see your favorite Recipes</h1>
 
