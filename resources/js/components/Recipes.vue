@@ -165,14 +165,6 @@ export default {
 
 <style scoped>
 
-.mealResults{
-    grid-column: col 3 / span 2;
-    grid-row: row 2;
-    display: grid;
-    grid-gap: 10px;
-    grid-template-columns: 1fr 1fr;
-}
-
 .thumbnail {
     grid-column: 1 / 3;
     grid-row: 1;
@@ -185,7 +177,7 @@ export default {
     grid-column: 1 / 3;
     grid-row: 2;
 
-    margin-bottom: 8px;
+    margin-bottom: 4px;
 
     text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
     font-family: sans-serif; color: white;
@@ -193,7 +185,7 @@ export default {
 }
 
 ul {
-    margin: 15px 15%;
+    margin: 15px 15% 50px 15%;
 }
 
 li {
