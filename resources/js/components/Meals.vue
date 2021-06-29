@@ -194,20 +194,6 @@ img.thumbnail {
     height: auto;
 }
 
-@media screen and (max-width: 800px) {
-    .modal {
-        position: fixed;
-        margin-top: 15%;
-        width: 200px;
-        height: 500px;
-    }
-    #youtube {
-        position: relative;
-        width: 75px;
-        height: 100px;
-    }
-}
-
 .loader {
     border: 16px solid #f3f3f3;
     border-radius: 50%;
@@ -224,6 +210,27 @@ img.thumbnail {
     z-index: 1000;
 
     display: none;
+}
+
+@media screen and (max-width: 800px) {
+    .modal {
+        position: fixed;
+        margin-top: 15%;
+        width: 200px;
+        height: 500px;
+    }
+    #youtube {
+        position: relative;
+        width: 75px;
+        height: 100px;
+    }
+    .loader{
+        position:fixed;
+        top:25%;
+        left:30%;
+        width: 150px;
+        height: 150px;
+    }
 }
 
 /* Safari */
