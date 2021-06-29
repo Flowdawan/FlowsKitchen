@@ -1,4 +1,17 @@
 function changeAccount() {
+
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                changeElements();
+            }
+        };
+        xhttp.open("GET", "/profile", true);
+        xhttp.send();
+
+}
+
+function changeElements(){
     document.getElementById("save_button").hidden = false;
 
     document.getElementById('name').disabled = false;
@@ -19,6 +32,5 @@ function changeAccount() {
 
     document.getElementById("delete_button").remove()
     document.getElementById("edit_button").remove()
-
 }
 
