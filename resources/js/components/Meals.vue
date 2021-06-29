@@ -1,9 +1,9 @@
 <template>
     <ul class="list-inline">
         <li class="height: 220px;  list-inline-item bg-secondary text-white rounded-lg m-2" v-for="meal in meals">
-            <div :id="meal.idMeal + 'thumbnail'">
-                <img :src="meal.strMealThumb" class="thumbnail">
-                <p class="mealTitle">{{meal.strMeal}}</p>
+            <div :id="meal.idMeal + 'thumbnail'" class="mealResults">
+                <img :src="meal.strMealThumb" class="thumbnail  rounded-lg">
+                <p class="mealTitle text-truncate">{{meal.strMeal}}</p>
             </div>
             <div class="modal text-dark" :id="meal.idMeal + 'modal'" tabindex="-1" role="dialog">
                 <div class="modal-dialog-scrollable modal-lg" role="document">
@@ -159,9 +159,35 @@ export default {
 
 <style scoped>
 
+.mealResults{
+    grid-column: col 3 / span 2;
+    grid-row: row 2;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr;
+}
+
+.thumbnail {
+    grid-column: 1 / 3;
+    grid-row: 1;
+
+    width: 100%;
+    height: auto;
+}
+
+.mealTitle {
+    grid-column: 1 / 3;
+    grid-row: 2;
+
+    margin-bottom: 8px;
+
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+    font-family: sans-serif; color: white;
+    font-size: 18px;
+}
+
 ul {
     margin: 15px 15%;
-
 }
 
 li {
@@ -170,18 +196,14 @@ li {
     border-color: white 1px;
 }
 
-p.mealTitle {
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
-    font-family: sans-serif; color: white;
-    font-size: 26px;
+.modal {
+    margin-left: 25%;
+    margin-right: 25%;
 }
 
-img.thumbnail {
-    width: 100%;
-    height: 140px;
+#modalImg {
+    max-width: 50%;
+    height: auto;
 }
 
 .modal {
@@ -230,6 +252,9 @@ img.thumbnail {
         left:30%;
         width: 150px;
         height: 150px;
+    }
+    li {
+        width: auto;
     }
 }
 

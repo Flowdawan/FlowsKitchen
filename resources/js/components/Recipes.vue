@@ -1,10 +1,10 @@
 <template>
     <ul class="list-inline">
         <p class="display: none; text-center text-white" id="noRecipes">There are no saved recipes</p>
-        <li class="height: 220px;  list-inline-item bg-secondary text-white rounded-lg m-2" v-for="meal in meals">
-            <div :id="meal.idMeal + 'thumbnail'">
-                <img :src="meal.strMealThumb" class="thumbnail">
-                <p class="mealTitle">{{meal.strMeal}}</p>
+        <li class="list-inline-item bg-secondary text-white rounded-lg m-2" v-for="meal in meals">
+            <div :id="meal.idMeal + 'thumbnail'" class="mealResults">
+                <img :src="meal.strMealThumb" class="thumbnail  rounded-lg">
+                <p class="mealTitle text-truncate">{{meal.strMeal}}</p>
             </div>
             <div class="modal text-dark" :id="meal.idMeal + 'modal'" tabindex="-1" role="dialog">
                 <div class="modal-dialog-scrollable modal-lg" role="document">
@@ -165,29 +165,41 @@ export default {
 
 <style scoped>
 
+.mealResults{
+    grid-column: col 3 / span 2;
+    grid-row: row 2;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr;
+}
+
+.thumbnail {
+    grid-column: 1 / 3;
+    grid-row: 1;
+
+    width: 100%;
+    height: auto;
+}
+
+.mealTitle {
+    grid-column: 1 / 3;
+    grid-row: 2;
+
+    margin-bottom: 8px;
+
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+    font-family: sans-serif; color: white;
+    font-size: 18px;
+}
+
 ul {
     margin: 15px 15%;
-
 }
 
 li {
     width: 18%;
     position: relative;
     border-color: white 1px;
-}
-
-p.mealTitle {
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
-    font-family: sans-serif; color: white;
-    font-size: 26px;
-}
-
-img.thumbnail {
-    width: 100%;
-    height: 140px;
 }
 
 .modal {
@@ -247,5 +259,11 @@ img.thumbnail {
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
+}
+
+@media screen and (max-width: 780px) {
+    li {
+        width: auto;
+    }
 }
 </style>

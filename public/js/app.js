@@ -7232,7 +7232,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.autocomplete[data-v-962edab2] {\r\n    /*the container must be positioned relative:*/\r\n    position: relative;\r\n    display: inline-block;\n}\n.autocomplete-items[data-v-962edab2] {\r\n    position: absolute;\r\n    border: 1px solid #d4d4d4;\r\n    border-bottom: none;\r\n    border-top: none;\r\n    z-index: 99;\r\n    /*position the autocomplete items to be the same width as the container:*/\r\n    top: 100%;\r\n    left: 0;\r\n    right: 0;\n}\n.autocomplete-items div[data-v-962edab2] {\r\n    padding: 10px;\r\n    cursor: pointer;\r\n    background-color: #fff;\r\n    border-bottom: 1px solid #d4d4d4;\n}\n.autocomplete-items div[data-v-962edab2]:hover {\r\n    /*when hovering an item:*/\r\n    background-color: #e9e9e9;\n}\n.autocomplete-active[data-v-962edab2] {\r\n    /*when navigating through the items using the arrow keys:*/\r\n    background-color: DodgerBlue !important;\r\n    color: #ffffff;\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.autocomplete[data-v-962edab2] {\n    /*the container must be positioned relative:*/\n    position: relative;\n    display: inline-block;\n}\n.autocomplete-items[data-v-962edab2] {\n    position: absolute;\n    border: 1px solid #d4d4d4;\n    border-bottom: none;\n    border-top: none;\n    z-index: 99;\n    /*position the autocomplete items to be the same width as the container:*/\n    top: 100%;\n    left: 0;\n    right: 0;\n}\n.autocomplete-items div[data-v-962edab2] {\n    padding: 10px;\n    cursor: pointer;\n    background-color: #fff;\n    border-bottom: 1px solid #d4d4d4;\n}\n.autocomplete-items div[data-v-962edab2]:hover {\n    /*when hovering an item:*/\n    background-color: #e9e9e9;\n}\n.autocomplete-active[data-v-962edab2] {\n    /*when navigating through the items using the arrow keys:*/\n    background-color: DodgerBlue !important;\n    color: #ffffff;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -7256,7 +7256,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\nul[data-v-8d565496] {\n    margin: 15px 15%;\n}\nli[data-v-8d565496] {\n    width: 18%;\n    position: relative;\n    border-color: white 1px;\n}\np.mealTitle[data-v-8d565496] {\n    width: 100%;\n    position: absolute;\n    bottom: 0;\n    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;\n    font-family: sans-serif; color: white;\n    font-size: 26px;\n}\nimg.thumbnail[data-v-8d565496] {\n    width: 100%;\n    height: 140px;\n}\n.modal[data-v-8d565496] {\n    margin-left: 25%;\n    margin-right: 25%;\n}\n#modalImg[data-v-8d565496] {\n    max-width: 50%;\n    height: auto;\n}\n.loader[data-v-8d565496] {\n    border: 16px solid #f3f3f3;\n    border-radius: 50%;\n    border-top: 16px solid #3498db;\n    width: 360px;\n    height: 360px;\n    -webkit-animation: spin-data-v-8d565496 2s linear infinite; /* Safari */\n    animation: spin-data-v-8d565496 2s linear infinite;\n\n    position:fixed;\n    top:25%;\n    left:40%;\n    transform:translate(-50%, -50%);\n    z-index: 1000;\n\n    display: none;\n}\n@media screen and (max-width: 800px) {\n.modal[data-v-8d565496] {\n        position: fixed;\n        margin-top: 15%;\n        width: 200px;\n        height: 500px;\n}\n#youtube[data-v-8d565496] {\n        position: relative;\n        width: 75px;\n        height: 100px;\n}\n.loader[data-v-8d565496]{\n        position:fixed;\n        top:25%;\n        left:30%;\n        width: 150px;\n        height: 150px;\n}\n}\n\n/* Safari */\n@-webkit-keyframes spin-data-v-8d565496 {\n0% { -webkit-transform: rotate(0deg);\n}\n100% { -webkit-transform: rotate(360deg);\n}\n}\n@keyframes spin-data-v-8d565496 {\n0% { transform: rotate(0deg);\n}\n100% { transform: rotate(360deg);\n}\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.mealResults[data-v-8d565496]{\n    grid-column: col 3 / span 2;\n    grid-row: row 2;\n    display: grid;\n    grid-gap: 10px;\n    grid-template-columns: 1fr 1fr;\n}\n.thumbnail[data-v-8d565496] {\n    grid-column: 1 / 3;\n    grid-row: 1;\n\n    width: 100%;\n    height: auto;\n}\n.mealTitle[data-v-8d565496] {\n    grid-column: 1 / 3;\n    grid-row: 2;\n\n    margin-bottom: 8px;\n\n    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;\n    font-family: sans-serif; color: white;\n    font-size: 18px;\n}\nul[data-v-8d565496] {\n    margin: 15px 15%;\n}\nli[data-v-8d565496] {\n    width: 18%;\n    position: relative;\n    border-color: white 1px;\n}\n.modal[data-v-8d565496] {\n    margin-left: 25%;\n    margin-right: 25%;\n}\n#modalImg[data-v-8d565496] {\n    max-width: 50%;\n    height: auto;\n}\n.modal[data-v-8d565496] {\n    margin-left: 25%;\n    margin-right: 25%;\n}\n#modalImg[data-v-8d565496] {\n    max-width: 50%;\n    height: auto;\n}\n.loader[data-v-8d565496] {\n    border: 16px solid #f3f3f3;\n    border-radius: 50%;\n    border-top: 16px solid #3498db;\n    width: 360px;\n    height: 360px;\n    -webkit-animation: spin-data-v-8d565496 2s linear infinite; /* Safari */\n    animation: spin-data-v-8d565496 2s linear infinite;\n\n    position:fixed;\n    top:25%;\n    left:40%;\n    transform:translate(-50%, -50%);\n    z-index: 1000;\n\n    display: none;\n}\n@media screen and (max-width: 800px) {\n.modal[data-v-8d565496] {\n        position: fixed;\n        margin-top: 15%;\n        width: 200px;\n        height: 500px;\n}\n#youtube[data-v-8d565496] {\n        position: relative;\n        width: 75px;\n        height: 100px;\n}\n.loader[data-v-8d565496]{\n        position:fixed;\n        top:25%;\n        left:30%;\n        width: 150px;\n        height: 150px;\n}\nli[data-v-8d565496] {\n        width: auto;\n}\n}\n\n/* Safari */\n@-webkit-keyframes spin-data-v-8d565496 {\n0% { -webkit-transform: rotate(0deg);\n}\n100% { -webkit-transform: rotate(360deg);\n}\n}\n@keyframes spin-data-v-8d565496 {\n0% { transform: rotate(0deg);\n}\n100% { transform: rotate(360deg);\n}\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -7280,7 +7280,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\nul[data-v-4fb0ab8a] {\n    margin: 15px 15%;\n}\nli[data-v-4fb0ab8a] {\n    width: 18%;\n    position: relative;\n    border-color: white 1px;\n}\np.mealTitle[data-v-4fb0ab8a] {\n    width: 100%;\n    position: absolute;\n    bottom: 0;\n    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;\n    font-family: sans-serif; color: white;\n    font-size: 26px;\n}\nimg.thumbnail[data-v-4fb0ab8a] {\n    width: 100%;\n    height: 140px;\n}\n.modal[data-v-4fb0ab8a] {\n    margin-left: 25%;\n    margin-right: 25%;\n}\n#modalImg[data-v-4fb0ab8a] {\n    max-width: 50%;\n    height: auto;\n}\n.loader[data-v-4fb0ab8a] {\n    border: 16px solid #f3f3f3;\n    border-radius: 50%;\n    border-top: 16px solid #3498db;\n    width: 360px;\n    height: 360px;\n    -webkit-animation: spin-data-v-4fb0ab8a 2s linear infinite; /* Safari */\n    animation: spin-data-v-4fb0ab8a 2s linear infinite;\n\n    position:fixed;\n    top:25%;\n    left:40%;\n    transform:translate(-50%, -50%);\n    z-index: 1000;\n\n    display: none;\n}\n@media screen and (max-width: 800px) {\n.modal[data-v-4fb0ab8a] {\n        position: fixed;\n        width: 200px;\n        height: 500px;\n}\n#youtube[data-v-4fb0ab8a] {\n        position: relative;\n        width: 75px;\n        height: 100px;\n}\n.loader[data-v-4fb0ab8a]{\n        position:fixed;\n        top:25%;\n        left:30%;\n        width: 150px;\n        height: 150px;\n}\n}\n\n/* Safari */\n@-webkit-keyframes spin-data-v-4fb0ab8a {\n0% { -webkit-transform: rotate(0deg);\n}\n100% { -webkit-transform: rotate(360deg);\n}\n}\n@keyframes spin-data-v-4fb0ab8a {\n0% { transform: rotate(0deg);\n}\n100% { transform: rotate(360deg);\n}\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.mealResults[data-v-4fb0ab8a]{\n    grid-column: col 3 / span 2;\n    grid-row: row 2;\n    display: grid;\n    grid-gap: 10px;\n    grid-template-columns: 1fr 1fr;\n}\n.thumbnail[data-v-4fb0ab8a] {\n    grid-column: 1 / 3;\n    grid-row: 1;\n\n    width: 100%;\n    height: auto;\n}\n.mealTitle[data-v-4fb0ab8a] {\n    grid-column: 1 / 3;\n    grid-row: 2;\n\n    margin-bottom: 8px;\n\n    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;\n    font-family: sans-serif; color: white;\n    font-size: 18px;\n}\nul[data-v-4fb0ab8a] {\n    margin: 15px 15%;\n}\nli[data-v-4fb0ab8a] {\n    width: 18%;\n    position: relative;\n    border-color: white 1px;\n}\n.modal[data-v-4fb0ab8a] {\n    margin-left: 25%;\n    margin-right: 25%;\n}\n#modalImg[data-v-4fb0ab8a] {\n    max-width: 50%;\n    height: auto;\n}\n.loader[data-v-4fb0ab8a] {\n    border: 16px solid #f3f3f3;\n    border-radius: 50%;\n    border-top: 16px solid #3498db;\n    width: 360px;\n    height: 360px;\n    -webkit-animation: spin-data-v-4fb0ab8a 2s linear infinite; /* Safari */\n    animation: spin-data-v-4fb0ab8a 2s linear infinite;\n\n    position:fixed;\n    top:25%;\n    left:40%;\n    transform:translate(-50%, -50%);\n    z-index: 1000;\n\n    display: none;\n}\n@media screen and (max-width: 800px) {\n.modal[data-v-4fb0ab8a] {\n        position: fixed;\n        width: 200px;\n        height: 500px;\n}\n#youtube[data-v-4fb0ab8a] {\n        position: relative;\n        width: 75px;\n        height: 100px;\n}\n.loader[data-v-4fb0ab8a]{\n        position:fixed;\n        top:25%;\n        left:30%;\n        width: 150px;\n        height: 150px;\n}\n}\n\n/* Safari */\n@-webkit-keyframes spin-data-v-4fb0ab8a {\n0% { -webkit-transform: rotate(0deg);\n}\n100% { -webkit-transform: rotate(360deg);\n}\n}\n@keyframes spin-data-v-4fb0ab8a {\n0% { transform: rotate(0deg);\n}\n100% { transform: rotate(360deg);\n}\n}\n@media screen and (max-width: 780px) {\nli[data-v-4fb0ab8a] {\n        width: auto;\n}\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -39958,16 +39958,23 @@ var render = function() {
               "height: 220px;  list-inline-item bg-secondary text-white rounded-lg m-2"
           },
           [
-            _c("div", { attrs: { id: meal.idMeal + "thumbnail" } }, [
-              _c("img", {
-                staticClass: "thumbnail",
-                attrs: { src: meal.strMealThumb }
-              }),
-              _vm._v(" "),
-              _c("p", { staticClass: "mealTitle" }, [
-                _vm._v(_vm._s(meal.strMeal))
-              ])
-            ]),
+            _c(
+              "div",
+              {
+                staticClass: "mealResults",
+                attrs: { id: meal.idMeal + "thumbnail" }
+              },
+              [
+                _c("img", {
+                  staticClass: "thumbnail  rounded-lg",
+                  attrs: { src: meal.strMealThumb }
+                }),
+                _vm._v(" "),
+                _c("p", { staticClass: "mealTitle text-truncate" }, [
+                  _vm._v(_vm._s(meal.strMeal))
+                ])
+              ]
+            ),
             _vm._v(" "),
             _c(
               "div",
@@ -40128,19 +40135,26 @@ var render = function() {
           "li",
           {
             staticClass:
-              "height: 220px;  list-inline-item bg-secondary text-white rounded-lg m-2"
+              "list-inline-item bg-secondary text-white rounded-lg m-2"
           },
           [
-            _c("div", { attrs: { id: meal.idMeal + "thumbnail" } }, [
-              _c("img", {
-                staticClass: "thumbnail",
-                attrs: { src: meal.strMealThumb }
-              }),
-              _vm._v(" "),
-              _c("p", { staticClass: "mealTitle" }, [
-                _vm._v(_vm._s(meal.strMeal))
-              ])
-            ]),
+            _c(
+              "div",
+              {
+                staticClass: "mealResults",
+                attrs: { id: meal.idMeal + "thumbnail" }
+              },
+              [
+                _c("img", {
+                  staticClass: "thumbnail  rounded-lg",
+                  attrs: { src: meal.strMealThumb }
+                }),
+                _vm._v(" "),
+                _c("p", { staticClass: "mealTitle text-truncate" }, [
+                  _vm._v(_vm._s(meal.strMeal))
+                ])
+              ]
+            ),
             _vm._v(" "),
             _c(
               "div",
